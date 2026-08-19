@@ -1,0 +1,19 @@
+{
+  "name": "mohan-portfolio",
+  "version": "1.0.0",
+  "description": "Mohaneshwaran M - Web Developer Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Mohaneshwaran M",
+  "license": "ISC"
+}

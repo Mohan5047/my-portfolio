@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Server file (not needed for GitHub Pages static hosting)
+# server.js is kept for local development only
