@@ -6,25 +6,20 @@
 
 /* ==================== ROOT VARIABLES & THEMES ==================== */
 :root {
-    /* Background Palette (Deep Midnight Slate & Sapphire Obsidian) */
+    /* Background Palette (Clean Modern White & Crisp Glass) */
     --bg-main: #ffffff;
-    --bg-surface: #e9f5dc;
-    --bg-card: rgba(160, 202, 134, 0.82);
-    --bg-card-hover: rgba(103, 178, 55, 0.95);
-    --bg-card-glass: rgba(255, 255, 255, 0.035);
+    --bg-surface: #f8fafc;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-card-hover: #ffffff;
+    --bg-card-glass: rgba(15, 23, 42, 0.03);
 
     /* Analytics Brand Accent Colors */
-    --sapphire-primary: #3b82f6;
-    /* Sapphire Blue */
-    --sapphire-hover: #2563eb;
-    --emerald-accent: #10b981;
-    /* Emerald Green (Growth/KPI) */
-    --cyan-accent: #06b6d4;
-    /* Telemetry Cyan */
-    --purple-accent: #8b5cf6;
-    /* AI / ML Violet */
-    --amber-accent: #f59e0b;
-    /* Analytics Warning/Alert */
+    --sapphire-primary: #2563eb;
+    --sapphire-hover: #1d4ed8;
+    --emerald-accent: #059669;
+    --cyan-accent: #0284c7;
+    --purple-accent: #7c3aed;
+    --amber-accent: #d97706;
 
     /* Active Dynamic Accents */
     --accent-main: var(--sapphire-primary);
@@ -32,46 +27,31 @@
     --accent-tertiary: var(--purple-accent);
 
     /* Gradients */
-    --gradient-analytics: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
-    --gradient-ai: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
-    --gradient-emerald: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-    --gradient-amber: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    --gradient-analytics: linear-gradient(135deg, #2563eb 0%, #0284c7 50%, #059669 100%);
+    --gradient-ai: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+    --gradient-emerald: linear-gradient(135deg, #059669 0%, #0284c7 100%);
+    --gradient-amber: linear-gradient(135deg, #d97706 0%, #dc2626 100%);
 
-    /* Typography Colors */
-    --text-title: #f8fafc;
-    --text-body: #94a3b8;
+    /* Typography Colors (High-Contrast & Ultra-Crisp on White) */
+    --text-title: #0f172a;
+    --text-body: #334155;
     --text-muted: #64748b;
-    --text-highlight: #3b82f6;
+    --text-highlight: #2563eb;
 
     /* Borders & Glows */
-    --border-subtle: rgba(255, 255, 255, 0.09);
-    --border-hover: rgba(59, 130, 246, 0.5);
-    --glow-sapphire: 0 0 25px rgba(59, 130, 246, 0.35);
-    --glow-emerald: 0 0 25px rgba(16, 185, 129, 0.35);
-    --shadow-box: 0 16px 36px rgba(0, 0, 0, 0.5);
+    --border-subtle: rgba(15, 23, 42, 0.1);
+    --border-hover: rgba(37, 99, 235, 0.5);
+    --glow-sapphire: 0 10px 30px rgba(37, 99, 235, 0.18);
+    --glow-emerald: 0 10px 30px rgba(5, 150, 105, 0.18);
+    --shadow-box: 0 12px 35px rgba(15, 23, 42, 0.07);
 
     /* Layout & Dimensions */
     --nav-height: 75px;
-    --dashboard-height: auto;
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 22px;
     --radius-full: 9999px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Light Theme Mode */
-body.light-mode {
-    --bg-main: #f1f5f9;
-    --bg-surface: #ffffff;
-    --bg-card: rgba(255, 255, 255, 0.92);
-    --bg-card-hover: #ffffff;
-    --bg-card-glass: rgba(0, 0, 0, 0.03);
-    --text-title: #0f172a;
-    --text-body: #475569;
-    --text-muted: #94a3b8;
-    --border-subtle: rgba(0, 0, 0, 0.08);
-    --shadow-box: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 /* ==================== GLOBAL RESET & CYBER DATA GRID ==================== */
@@ -86,10 +66,6 @@ body.light-mode {
 
 html {
     scroll-behavior: smooth;
-    color-scheme: dark;
-}
-
-body.light-mode {
     color-scheme: light;
 }
 
@@ -102,52 +78,221 @@ body {
     transition: background-color var(--transition), color var(--transition);
 }
 
-/* Cyber Data Mesh Background Grid */
+/* Continuously Drifting Cyber Data Mesh Grid */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-size: 45px 45px;
+    top: -50px;
+    left: -50px;
+    width: calc(100vw + 100px);
+    height: calc(100vh + 100px);
+    background-size: 48px 48px;
     background-image:
-        linear-gradient(to right, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+        linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
     pointer-events: none;
     z-index: 0;
+    animation: gridDrift 28s linear infinite;
 }
 
-body.light-mode::before {
-    background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+@keyframes gridDrift {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(24px, 24px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
-/* Ambient Radial Glows */
-.ambient-glow-1,
-.ambient-glow-2 {
+/* ==================== SIMULTANEOUSLY RUNNING ANIMATED GLOWS ==================== */
+.ambient-glow {
     position: fixed;
     border-radius: 50%;
-    filter: blur(140px);
+    filter: blur(110px);
     pointer-events: none;
     z-index: 0;
+    opacity: 0.75;
+    will-change: transform;
 }
 
 .ambient-glow-1 {
-    top: -12%;
-    left: -8%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.18), transparent 70%);
+    top: -10%;
+    left: -10%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.22), transparent 70%);
+    animation: floatOrb1 18s ease-in-out infinite alternate;
 }
 
 .ambient-glow-2 {
-    bottom: 5%;
+    bottom: -10%;
     right: -10%;
-    width: 650px;
-    height: 650px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.14), transparent 70%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.18), transparent 70%);
+    animation: floatOrb2 22s ease-in-out infinite alternate;
+}
+
+.ambient-glow-3 {
+    top: 40%;
+    right: 5%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.16), transparent 70%);
+    animation: floatOrb3 20s ease-in-out infinite alternate;
+}
+
+.ambient-glow-4 {
+    bottom: 25%;
+    left: 5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.18), transparent 70%);
+    animation: floatOrb4 25s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(120px, 80px) scale(1.15);
+    }
+    100% {
+        transform: translate(40px, 140px) scale(0.95);
+    }
+}
+
+@keyframes floatOrb2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-140px, -90px) scale(1.18);
+    }
+    100% {
+        transform: translate(-70px, -150px) scale(0.92);
+    }
+}
+
+@keyframes floatOrb3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-100px, 100px) scale(1.2);
+    }
+    100% {
+        transform: translate(-150px, -50px) scale(0.9);
+    }
+}
+
+@keyframes floatOrb4 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(110px, -80px) scale(1.22);
+    }
+    100% {
+        transform: translate(60px, 70px) scale(0.9);
+    }
+}
+
+/* ==================== FLOATING SHIMMER PARTICLES ==================== */
+.floating-particle {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    background: var(--gradient-analytics);
+    opacity: 0.35;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+    will-change: transform;
+}
+
+.p1 {
+    top: 15%;
+    left: 20%;
+    width: 14px;
+    height: 14px;
+    animation: particleMotion1 14s ease-in-out infinite;
+}
+
+.p2 {
+    top: 60%;
+    left: 12%;
+    width: 20px;
+    height: 20px;
+    animation: particleMotion2 19s ease-in-out infinite;
+}
+
+.p3 {
+    top: 30%;
+    right: 18%;
+    width: 16px;
+    height: 16px;
+    animation: particleMotion3 16s ease-in-out infinite;
+}
+
+.p4 {
+    top: 75%;
+    right: 25%;
+    width: 22px;
+    height: 22px;
+    animation: particleMotion1 22s ease-in-out infinite reverse;
+}
+
+.p5 {
+    top: 85%;
+    left: 45%;
+    width: 12px;
+    height: 12px;
+    animation: particleMotion2 17s ease-in-out infinite;
+}
+
+.p6 {
+    top: 22%;
+    left: 70%;
+    width: 18px;
+    height: 18px;
+    animation: particleMotion3 20s ease-in-out infinite;
+}
+
+@keyframes particleMotion1 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translate(60px, -80px) scale(1.4);
+        opacity: 0.6;
+    }
+}
+
+@keyframes particleMotion2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-70px, -90px) scale(1.35);
+        opacity: 0.65;
+    }
+}
+
+@keyframes particleMotion3 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translate(80px, 70px) scale(1.3);
+        opacity: 0.55;
+    }
 }
 
 /* Scrollbar */
@@ -297,13 +442,10 @@ header {
     height: var(--nav-height);
     z-index: 1000;
     transition: var(--transition);
-    background: rgba(7, 10, 18, 0.85);
+    background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-subtle);
-}
-
-body.light-mode header {
-    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
 }
 
 nav {
@@ -314,7 +456,7 @@ nav {
 }
 
 .brand-logo {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     font-weight: 800;
     color: var(--text-title);
     text-decoration: none;
@@ -322,16 +464,6 @@ nav {
     align-items: center;
     gap: 0.4rem;
     letter-spacing: -0.5px;
-}
-
-.brand-badge {
-    background: var(--gradient-analytics);
-    color: #ffffff;
-    font-size: 0.72rem;
-    font-weight: 800;
-    padding: 0.15rem 0.5rem;
-    border-radius: var(--radius-sm);
-    letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -344,8 +476,8 @@ nav {
 .nav-menu a {
     color: var(--text-body);
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.98rem;
+    font-weight: 700;
     transition: var(--transition);
     position: relative;
     padding: 0.4rem 0;
@@ -353,7 +485,7 @@ nav {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: var(--text-title);
+    color: var(--sapphire-primary);
 }
 
 .nav-menu a::after {
@@ -362,7 +494,7 @@ nav {
     bottom: 0;
     left: 0;
     width: 0%;
-    height: 2px;
+    height: 2.5px;
     background: var(--gradient-analytics);
     border-radius: var(--radius-full);
     transition: width var(--transition);
@@ -1226,23 +1358,20 @@ body.light-mode .progress-track {
 .cyber-input {
     width: 100%;
     padding: 1rem 1.25rem;
-    background: var(--bg-card-glass);
+    background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
     color: var(--text-title);
     font-size: 0.95rem;
+    font-weight: 500;
     outline: none;
     transition: var(--transition);
 }
 
-body.light-mode .cyber-input {
-    background: #ffffff;
-}
-
 .cyber-input:focus {
     border-color: var(--sapphire-primary);
-    background: rgba(59, 130, 246, 0.05);
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
 textarea.cyber-input {
@@ -1255,25 +1384,22 @@ textarea.cyber-input {
     margin-top: 1.2rem;
     padding: 1.1rem;
     border-radius: var(--radius-md);
-    background: rgba(16, 185, 129, 0.15);
+    background: rgba(5, 150, 105, 0.12);
     border: 1px solid var(--emerald-accent);
-    color: #6ee7b7;
+    color: #047857;
     font-size: 0.92rem;
+    font-weight: 700;
     text-align: center;
     animation: fadeIn 0.3s ease;
 }
 
 /* ==================== FOOTER ==================== */
 footer {
-    background: #04070e;
+    background: #f8fafc;
     border-top: 1px solid var(--border-subtle);
     padding: 4rem 0 2.5rem;
     position: relative;
     z-index: 1;
-}
-
-body.light-mode footer {
-    background: #e2e8f0;
 }
 
 .footer-inner {
@@ -1296,7 +1422,7 @@ body.light-mode footer {
     color: var(--text-body);
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 700;
     transition: var(--transition);
 }
 
@@ -1313,7 +1439,7 @@ body.light-mode footer {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: var(--bg-card);
+    background: #ffffff;
     border: 1px solid var(--border-subtle);
     color: var(--text-body);
     display: flex;
@@ -1322,6 +1448,7 @@ body.light-mode footer {
     text-decoration: none;
     font-size: 1.2rem;
     transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .footer-btn-circle:hover {
@@ -1344,7 +1471,7 @@ body.light-mode footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.82);
+    background: rgba(15, 23, 42, 0.65);
     backdrop-filter: blur(14px);
     z-index: 2000;
     display: flex;
@@ -1362,7 +1489,7 @@ body.light-mode footer {
 }
 
 .modal-container {
-    background: var(--bg-surface);
+    background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     width: 100%;
@@ -1370,7 +1497,7 @@ body.light-mode footer {
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    box-shadow: var(--shadow-box);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
     transform: scale(0.95) translateY(20px);
     transition: transform var(--transition);
 }
