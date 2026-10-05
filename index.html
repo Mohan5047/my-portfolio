@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="M-VERSE // Mohaneshwaran M — Cinematic Futuristic Developer Command Center Portfolio. Full-Stack & Data Analytics Specialist.">
+        content="MOHANESWARAN M — Developer Multiverse. An interconnected 3D spatial developer world exploring analytics, machine learning, and full-stack missions.">
     <meta name="keywords"
-        content="Mohaneshwaran M, M-VERSE, Developer Portfolio, Data Analytics, CollabSphere, Ecova, AI Interview Agent, Python, SQL, Machine Learning, Power BI">
+        content="Mohaneshwaran M, Developer Multiverse, 3D Portfolio, Data Analytics, CollabSphere, Ecova, AI Interview Agent, Python, SQL, Machine Learning, Power BI">
     <meta name="author" content="Mohaneshwaran M">
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#030307">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Mohaneshwaran M | M-VERSE // Developer Operations">
+    <meta property="og:title" content="Mohaneshwaran M | Developer Multiverse">
     <meta property="og:description"
-        content="Futuristic Developer Command Center & Operations Portfolio. Explore missions, technical arsenal, and real-time intelligence.">
+        content="Step into an interconnected developer multiverse. Explore branching missions, technical constellations, and real-time intelligence.">
     <meta property="og:image" content="./assets/project1.png">
 
-    <title>Mohaneshwaran M | M-VERSE // Developer Operations</title>
+    <title>Mohaneshwaran M | Developer Multiverse</title>
 
     <!-- Font Awesome Icons 6.5.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -32,226 +32,166 @@
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
         rel="stylesheet">
 
-    <!-- Cinematic HUD Stylesheet -->
+    <!-- Three.js 3D Library (r128) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Multiverse Stylesheet -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-    <!-- ==================== 1. CINEMATIC INTRO BOOTLOADER ==================== -->
-    <div id="cinematic-intro">
-        <div class="intro-radar-ring"></div>
-        <div class="intro-hud-box">
-            <h1 class="intro-logo">M-VERSE <span class="accent">// DEV OPS</span></h1>
-            <div class="intro-status-stream" id="intro-status-text">&gt; INITIALIZING DEVELOPER SYSTEM...</div>
-            <div class="intro-progress-track">
-                <div class="intro-progress-bar" id="intro-progress-bar"></div>
+    <!-- ==================== 1. MULTIVERSE INTRO SEQUENCE ==================== -->
+    <div id="multiverse-intro">
+        <div class="intro-core-container">
+            <div class="singularity-point"></div>
+            <h1 class="intro-brand-title">MOHANESWARAN <span class="gradient-text">MULTIVERSE</span></h1>
+            <div class="intro-stream-message" id="intro-stream-message">&gt; EXPANDING SPATIAL REALMS...</div>
+            <div class="intro-timeline-track">
+                <div class="intro-timeline-fill" id="intro-timeline-fill"></div>
             </div>
-            <button class="intro-skip-btn" id="intro-skip-btn">[ SKIP INITIALIZATION ]</button>
+            <button class="intro-skip-button" id="intro-skip-button">[ SKIP TO MULTIVERSE ]</button>
         </div>
     </div>
 
-    <!-- ==================== 2. CUSTOM HUD CURSOR ==================== -->
-    <div class="hud-cursor-dot" id="hud-cursor-dot"></div>
-    <div class="hud-cursor-ring" id="hud-cursor-ring"></div>
-
-    <!-- ==================== 3. BACKGROUND CANVAS & HUD GRID ==================== -->
-    <canvas id="hud-canvas-bg"></canvas>
-    <div class="hud-grid-overlay"></div>
-    <div class="ambient-flare flare-1"></div>
-    <div class="ambient-flare flare-2"></div>
-
-    <!-- ==================== 4. REAL-TIME TELEMETRY TOP BAR ==================== -->
-    <div class="top-telemetry-bar">
-        <div class="container">
-            <div class="telemetry-row">
-                <div class="telemetry-status">
-                    <span class="signal-pulse-dot"></span>
-                    <span>M-VERSE // SYSTEM ONLINE</span>
-                </div>
-
-                <div class="telemetry-kpis">
-                    <div class="kpi-unit">
-                        <span>ACCURACY:</span>
-                        <span class="val">98.4%</span>
-                    </div>
-                    <div class="kpi-unit">
-                        <span>DATA INGESTION:</span>
-                        <span class="val">1.2M+ RECS</span>
-                    </div>
-                    <div class="kpi-unit">
-                        <span>LATENCY:</span>
-                        <span class="val">&lt;15MS</span>
-                    </div>
-                </div>
-
-                <div class="telemetry-clock" id="telemetry-clock">UTC 00:00:00</div>
-            </div>
-        </div>
+    <!-- ==================== 2. CONTEXTUAL CURSOR ==================== -->
+    <div class="multiverse-cursor-dot" id="multiverse-cursor-dot"></div>
+    <div class="multiverse-cursor-orb" id="multiverse-cursor-orb">
+        <span class="cursor-action-tag" id="cursor-action-tag">TRAVEL</span>
     </div>
 
-    <!-- ==================== 5. HUD NAVIGATION BAR ==================== -->
-    <header id="header">
-        <div class="container">
-            <nav>
-                <a href="#" class="hud-logo" aria-label="Mohaneshwaran M Home">
-                    <span>Mohaneshwaran</span> <span class="hud-logo-tag">DEV // OPS</span>
-                </a>
+    <!-- ==================== 3. THREE.JS 3D CANVAS & NEBULA ==================== -->
+    <canvas id="multiverse-canvas"></canvas>
+    <div class="nebula-glow nebula-1"></div>
+    <div class="nebula-glow nebula-2"></div>
 
-                <ul class="nav-links-menu" id="nav-links-menu">
-                    <li><a href="#hero">Command</a></li>
-                    <li><a href="#about">Identity</a></li>
-                    <li><a href="#projects">Missions</a></li>
-                    <li><a href="#skills">Arsenal</a></li>
-                    <li><a href="#experience">Operations</a></li>
-                    <li><a href="#records">Records</a></li>
-                    <li><a href="#intel">Intel</a></li>
-                    <li><a href="#contact">Channel</a></li>
-                </ul>
+    <!-- ==================== 4. FLOATING TOP TELEMETRY PILL & BRAND ==================== -->
+    <div class="top-telemetry-pill">
+        <span class="telemetry-pulse-dot"></span>
+        <span>MULTIVERSE // ACTIVE REALM</span>
+    </div>
 
-                <div class="nav-hud-controls">
-                    <!-- Audio Synthesizer Toggle (Muted by default) -->
-                    <button class="hud-ctrl-btn" id="sound-toggle-btn" aria-label="Toggle UI Audio"
-                        title="Audio Feedback: Muted">
-                        <i class="fa-solid fa-volume-xmark"></i>
-                    </button>
+    <div class="top-telemetry-right">
+        <a href="#origin" class="multiverse-logo-tag">M-VERSE // DEV</a>
+    </div>
 
-                    <!-- Workstation Light / Dark Theme Switcher -->
-                    <button class="hud-ctrl-btn" id="mode-toggle-btn" aria-label="Toggle Workstation Mode"
-                        title="Toggle Workstation Theme">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
+    <!-- ==================== 5. FLOATING MULTIVERSE NAVIGATION DOCK ==================== -->
+    <nav class="floating-nav-dock" aria-label="Multiverse Stations Navigation">
+        <a href="#origin" class="dock-nav-item active" title="Origin Core">
+            <span class="dock-node-dot"></span>
+            <span>Origin</span>
+        </a>
+        <a href="#about" class="dock-nav-item" title="Identity Node">
+            <span class="dock-node-dot"></span>
+            <span>Identity</span>
+        </a>
+        <a href="#projects" class="dock-nav-item" title="Project Universes">
+            <span class="dock-node-dot"></span>
+            <span>Missions</span>
+        </a>
+        <a href="#skills" class="dock-nav-item" title="Arsenal Constellation">
+            <span class="dock-node-dot"></span>
+            <span>Arsenal</span>
+        </a>
+        <a href="#experience" class="dock-nav-item" title="Timeline Stream">
+            <span class="dock-node-dot"></span>
+            <span>Timeline</span>
+        </a>
+        <a href="#records" class="dock-nav-item" title="Verified Records">
+            <span class="dock-node-dot"></span>
+            <span>Records</span>
+        </a>
+        <a href="#intel" class="dock-nav-item" title="Intel Dossier">
+            <span class="dock-node-dot"></span>
+            <span>Intel</span>
+        </a>
+        <a href="#contact" class="dock-nav-item" title="Convergence">
+            <span class="dock-node-dot"></span>
+            <span>Comms</span>
+        </a>
 
-                    <!-- Mobile Hamburger Menu Button -->
-                    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </header>
+        <div class="dock-divider"></div>
 
-    <main>
-        <!-- ==================== 6. HERO // COMMAND CENTER ==================== -->
-        <section class="hero" id="hero">
+        <!-- Audio Synthesizer Toggle -->
+        <button class="dock-ctrl-btn" id="sound-toggle-btn" aria-label="Toggle UI Audio" title="Audio Feedback: Muted">
+            <i class="fa-solid fa-volume-xmark"></i>
+        </button>
+
+        <!-- Workstation Mode Toggle -->
+        <button class="dock-ctrl-btn" id="mode-toggle-btn" aria-label="Toggle Theme" title="Toggle Workstation Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </nav>
+
+    <!-- ==================== 6. MULTIVERSE SPATIAL STATIONS ==================== -->
+    <div class="multiverse-universe-wrap">
+
+        <!-- STATION 01 // ORIGIN CORE (HERO) -->
+        <section class="spatial-station origin-hero-station" id="origin">
             <div class="container">
-                <div class="hero-layout-grid">
-                    <!-- Left Hero Command Card -->
-                    <div class="hud-card hero-command-card">
-                        <div class="hero-op-badge">
-                            <span class="signal-pulse-dot"></span>
-                            OPERATIONAL // DATA ANALYTICS & FULL-STACK
-                        </div>
-
-                        <h1 class="hero-title-name">
-                            MOHANESWARAN <span class="gradient-text">M.</span>
-                        </h1>
-
-                        <div class="hero-subtitle-role">
-                            <i class="fa-solid fa-terminal" style="color: var(--accent-cyan);"></i>
-                            <span id="typed-role-text" class="typed-role-text">Data Analytics Specialist</span>
-                        </div>
-
-                        <p class="hero-statement">
-                            Architecting data-driven business intelligence platforms, predictive machine learning models, and real-world digital solutions using Python, SQL, statistical modeling, and modern web architectures.
-                        </p>
-
-                        <!-- Tactical Tech Chips -->
-                        <div class="hero-tech-chips">
-                            <span class="hud-chip"><i class="fa-brands fa-python"></i> Python & Pandas</span>
-                            <span class="hud-chip"><i class="fa-solid fa-database"></i> SQL Query Engine</span>
-                            <span class="hud-chip"><i class="fa-solid fa-chart-pie"></i> Power BI / Tableau</span>
-                            <span class="hud-chip"><i class="fa-solid fa-brain"></i> Machine Learning</span>
-                            <span class="hud-chip"><i class="fa-brands fa-react"></i> React & Modern Web</span>
-                        </div>
-
-                        <!-- Action Buttons -->
-                        <div class="hero-cta-group">
-                            <a href="#projects" class="btn-hud btn-primary">
-                                <i class="fa-solid fa-crosshairs"></i> [ VIEW MISSIONS ]
-                            </a>
-                            <a href="#intel" class="btn-hud btn-secondary">
-                                <i class="fa-solid fa-file-shield"></i> [ CLASSIFIED INTEL ]
-                            </a>
-                            <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                                class="btn-hud btn-outline" aria-label="GitHub Repositories">
-                                <i class="fa-brands fa-github"></i> GITHUB
-                            </a>
-                            <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
-                                rel="noopener noreferrer" class="btn-hud btn-outline" aria-label="LinkedIn Profile">
-                                <i class="fa-brands fa-linkedin-in"></i> LINKEDIN
-                            </a>
-                        </div>
+                <div class="origin-core-content">
+                    <div class="origin-pulse-badge">
+                        <span class="telemetry-pulse-dot"></span>
+                        SPATIAL REALM // DATA ANALYTICS & FULL-STACK
                     </div>
 
-                    <!-- Right Side Column: Pipeline Hologram & Direct Comms -->
-                    <div class="hero-side-column">
-                        <!-- Holographic Code Window -->
-                        <div class="hud-terminal-card">
-                            <div class="terminal-top-bar">
-                                <div class="terminal-dots">
-                                    <span class="t-dot t-red"></span>
-                                    <span class="t-dot t-yellow"></span>
-                                    <span class="t-dot t-green"></span>
-                                </div>
-                                <span class="terminal-filename">mverse_operations.py</span>
-                            </div>
-                            <pre class="terminal-code-body"><code><span class="code-kw">import</span> mverse_core <span class="code-kw">as</span> mv
-<span class="code-kw">from</span> data_analytics <span class="code-kw">import</span> PredictivePipeline
+                    <h1 class="origin-hero-title">
+                        MOHANESWARAN <span class="gradient-text">M.</span>
+                    </h1>
 
-<span class="code-kw">class</span> <span class="code-fn">DeveloperOperations</span>:
-  <span class="code-prop">codename</span> = <span class="code-str">'MOHANESWARAN M'</span>
-  <span class="code-prop">status</span> = <span class="code-str">'OPERATIONAL // ACTIVE'</span>
-  <span class="code-prop">specialization</span> = [<span class="code-str">'Data Analytics'</span>, <span class="code-str">'Full Stack'</span>, <span class="code-str">'AI'</span>]
-  <span class="code-prop">flagship_missions</span> = [<span class="code-str">'CollabSphere'</span>, <span class="code-str">'Ecova'</span>, <span class="code-str">'AI Interview Agent'</span>]
+                    <div class="origin-role-terminal">
+                        <i class="fa-solid fa-cube" style="color: var(--accent-cyan);"></i>
+                        <span id="typed-multiverse-role" class="typed-multiverse-role">Data Analytics Specialist</span>
+                    </div>
 
-  <span class="code-kw">def</span> <span class="code-fn">execute_solution</span>(self):
-    <span class="code-cmt"># Delivering precision business intelligence</span>
-    <span class="code-kw">return</span> <span class="code-str">"Real-World Impact Deployed."</span>
+                    <p class="origin-statement">
+                        Welcome to my interconnected developer universe. Architecting high-precision business intelligence platforms, predictive machine learning models, and real-world digital solutions across the multiverse.
+                    </p>
 
-print(DeveloperOperations().execute_solution())</code></pre>
-                        </div>
+                    <div class="origin-action-cluster">
+                        <a href="#projects" class="btn-multiverse btn-primary">
+                            <i class="fa-solid fa-atom"></i> [ EXPLORE MISSIONS ]
+                        </a>
+                        <a href="#intel" class="btn-multiverse btn-glass">
+                            <i class="fa-solid fa-file-shield"></i> [ INTEL DOSSIER ]
+                        </a>
+                        <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
+                            class="btn-multiverse btn-outline" aria-label="GitHub Repositories">
+                            <i class="fa-brands fa-github"></i> GITHUB
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
+                            rel="noopener noreferrer" class="btn-multiverse btn-outline" aria-label="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i> LINKEDIN
+                        </a>
+                    </div>
 
-                        <!-- Tactical Comms Card -->
-                        <div class="hud-card comms-node-card">
-                            <div>
-                                <h4>Comms Telemetry</h4>
-                                <p>Open for opportunities & collaboration</p>
-                            </div>
-                            <div class="comms-icons">
-                                <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                                    class="comms-link-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
-                                    rel="noopener noreferrer" class="comms-link-btn" title="LinkedIn"><i
-                                        class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="mailto:mohaneshv32007@gmail.com" class="comms-link-btn" title="Email"><i
-                                        class="fa-solid fa-envelope"></i></a>
-                            </div>
-                        </div>
+                    <div class="quick-constellation-pills">
+                        <span class="constellation-pill"><i class="fa-brands fa-python"></i> Python & Pandas</span>
+                        <span class="constellation-pill"><i class="fa-solid fa-database"></i> SQL Relational Engine</span>
+                        <span class="constellation-pill"><i class="fa-solid fa-chart-pie"></i> Power BI / Tableau</span>
+                        <span class="constellation-pill"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+                        <span class="constellation-pill"><i class="fa-brands fa-react"></i> React & Modern Web</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 7. ABOUT // IDENTITY ==================== -->
-        <section class="section" id="about">
+        <!-- STATION 02 // IDENTITY NODE (ABOUT) -->
+        <section class="spatial-station" id="about">
             <div class="container">
-                <div class="section-hud-header">
-                    <span class="hud-tag"><i class="fa-solid fa-fingerprint"></i> SEC-02 // IDENTITY</span>
-                    <h2 class="hud-title">Developer <span class="gradient-text">Identity</span></h2>
-                    <p class="hud-desc">
-                        Engineering analytical platforms, quantitative data models, and scalable software systems with mathematical precision and clean architecture.
+                <div class="station-header">
+                    <span class="station-node-badge"><i class="fa-solid fa-fingerprint"></i> STATION 02 // IDENTITY NODE</span>
+                    <h2 class="station-title">Developer <span class="gradient-text">Identity</span></h2>
+                    <p class="station-desc">
+                        Engineering analytical platforms, quantitative data pipelines, and scalable software solutions with statistical rigor and clean architecture.
                     </p>
                 </div>
 
-                <div class="identity-grid">
-                    <!-- Story Tile -->
-                    <div class="hud-card identity-story-tile">
-                        <h3>M-VERSE Core Engineer</h3>
+                <div class="identity-node-grid">
+                    <div class="spatial-card identity-narrative-card">
+                        <h3>Multiverse Architect</h3>
                         <p>
-                            I am <strong>Mohaneshwaran M</strong>, a data analytics specialist and software engineer based in Tamil Nadu, India. I focus on turning complex, multi-dimensional datasets into high-value business intelligence, automated workflows, and applied machine learning models.
+                            I am <strong>Mohaneshwaran M</strong>, a data analytics specialist and software engineer based in Tamil Nadu, India. I specialize in turning complex multi-dimensional datasets into high-impact business intelligence, automated workflows, and applied machine learning models.
                         </p>
                         <p>
                             My engineering approach bridges robust backend data ingestion pipelines, optimized SQL queries, and interactive KPI visualizations. I have architected systems ranging from collaborative workspace telemetry (<strong>CollabSphere</strong>) and environmental sustainability intelligence (<strong>Ecova</strong>) to intelligent speech analytics (<strong>AI Interview Agent</strong>).
@@ -261,51 +201,50 @@ print(DeveloperOperations().execute_solution())</code></pre>
                         </p>
                     </div>
 
-                    <!-- Telemetry Specifications Tile -->
-                    <div class="hud-card identity-telemetry-tile">
-                        <div class="telemetry-spec-row">
-                            <span class="spec-label">PRIMARY ROLE</span>
-                            <span class="spec-val">Data Analytics Specialist & Software Engineer</span>
+                    <div class="spatial-card identity-specs-card">
+                        <div class="spec-node-row">
+                            <span class="spec-node-label">PRIMARY ROLE</span>
+                            <span class="spec-node-val">Data Analytics Specialist & Software Engineer</span>
                         </div>
-                        <div class="telemetry-spec-row">
-                            <span class="spec-label">CORE FOCUS</span>
-                            <span class="spec-val">Predictive Analytics • Business Intelligence • AI Solutions</span>
+                        <div class="spec-node-row">
+                            <span class="spec-node-label">CORE FOCUS</span>
+                            <span class="spec-node-val">Predictive Analytics • Business Intelligence • AI Solutions</span>
                         </div>
-                        <div class="telemetry-spec-row">
-                            <span class="spec-label">CURRENT MODE</span>
-                            <span class="spec-val">Building, Analyzing & Deploying</span>
+                        <div class="spec-node-row">
+                            <span class="spec-node-label">CURRENT MODE</span>
+                            <span class="spec-node-val">Building, Analyzing & Deploying</span>
                         </div>
-                        <div class="telemetry-spec-row">
-                            <span class="spec-label">GEOGRAPHIC TELEMETRY</span>
-                            <span class="spec-val">Tamil Nadu, India • GMT +5:30</span>
+                        <div class="spec-node-row">
+                            <span class="spec-node-label">GEOGRAPHIC TELEMETRY</span>
+                            <span class="spec-node-val">Tamil Nadu, India • GMT +5:30</span>
                         </div>
-                        <div class="telemetry-spec-row">
-                            <span class="spec-label">ARSENAL SUMMARY</span>
-                            <span class="spec-val">Python • SQL • Machine Learning • Power BI • React</span>
+                        <div class="spec-node-row">
+                            <span class="spec-node-label">ARSENAL SUMMARY</span>
+                            <span class="spec-node-val">Python • SQL • Machine Learning • Power BI • React</span>
                         </div>
                     </div>
 
-                    <!-- 4 Tactical Pillar Tiles -->
-                    <div class="hud-card identity-pillar-tile">
-                        <div class="pillar-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                    <!-- 4 Spatial Pillar Tiles -->
+                    <div class="spatial-card spatial-pillar-tile">
+                        <div class="pillar-icon-orbit"><i class="fa-solid fa-chart-line"></i></div>
                         <h4>Predictive Analytics</h4>
                         <p>Designing time-series models, regression pipelines, and anomaly detection algorithms.</p>
                     </div>
 
-                    <div class="hud-card identity-pillar-tile">
-                        <div class="pillar-icon-box"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="spatial-card spatial-pillar-tile">
+                        <div class="pillar-icon-orbit"><i class="fa-solid fa-cubes"></i></div>
                         <h4>Business Intelligence</h4>
                         <p>Transforming complex dimensional tables into real-time KPI telemetry dashboards.</p>
                     </div>
 
-                    <div class="hud-card identity-pillar-tile">
-                        <div class="pillar-icon-box"><i class="fa-solid fa-database"></i></div>
+                    <div class="spatial-card spatial-pillar-tile">
+                        <div class="pillar-icon-orbit"><i class="fa-solid fa-database"></i></div>
                         <h4>SQL & ETL Pipelines</h4>
                         <p>Automating data extraction, transformations, schema design, and high-speed query execution.</p>
                     </div>
 
-                    <div class="hud-card identity-pillar-tile">
-                        <div class="pillar-icon-box"><i class="fa-solid fa-brain"></i></div>
+                    <div class="spatial-card spatial-pillar-tile">
+                        <div class="pillar-icon-orbit"><i class="fa-solid fa-brain"></i></div>
                         <h4>Applied AI & NLP</h4>
                         <p>Integrating speech analysis, sentiment evaluation, and LLM-driven intelligence rubrics.</p>
                     </div>
@@ -313,134 +252,132 @@ print(DeveloperOperations().execute_solution())</code></pre>
             </div>
         </section>
 
-        <!-- ==================== 8. PROJECTS // MISSIONS ==================== -->
-        <section class="section" id="projects">
+        <!-- STATION 03 // PROJECT UNIVERSES (PROJECTS) -->
+        <section class="spatial-station" id="projects">
             <div class="container">
-                <div class="section-hud-header">
-                    <span class="hud-tag"><i class="fa-solid fa-crosshairs"></i> SEC-03 // MISSIONS</span>
-                    <h2 class="hud-title">Operational <span class="gradient-text">Missions</span></h2>
-                    <p class="hud-desc">
-                        Explore my flagship deployed missions spanning team workspace telemetry, smart environmental analytics, and AI candidate evaluation.
+                <div class="station-header">
+                    <span class="station-node-badge"><i class="fa-solid fa-atom"></i> STATION 03 // PROJECT UNIVERSES</span>
+                    <h2 class="station-title">Flagship <span class="gradient-text">Missions</span></h2>
+                    <p class="station-desc">
+                        Explore dedicated sub-universes spanning team workspace telemetry, smart environmental analytics, and AI candidate evaluation.
                     </p>
                 </div>
 
-                <!-- Mission Filter Tabs -->
-                <div class="mission-filters-track">
-                    <button class="mission-tab active" data-filter="all">[ ALL MISSIONS ]</button>
-                    <button class="mission-tab" data-filter="analytics">[ ANALYTICS & BI ]</button>
-                    <button class="mission-tab" data-filter="ai">[ AI & ML ]</button>
-                    <button class="mission-tab" data-filter="data">[ DATA PLATFORMS ]</button>
+                <div class="multiverse-filter-bar">
+                    <button class="multiverse-filter-pill active" data-filter="all">[ ALL MISSIONS ]</button>
+                    <button class="multiverse-filter-pill" data-filter="analytics">[ ANALYTICS & BI ]</button>
+                    <button class="multiverse-filter-pill" data-filter="ai">[ AI & ML ]</button>
+                    <button class="multiverse-filter-pill" data-filter="data">[ DATA PLATFORMS ]</button>
                 </div>
 
-                <!-- Missions Showcase Grid -->
-                <div class="missions-showcase-grid">
-                    <!-- Mission 01: CollabSphere -->
-                    <div class="hud-card mission-card" data-mission-cat="analytics data">
-                        <div class="mission-media-wrapper">
+                <div class="project-universes-grid">
+                    <!-- Project Universe 01: CollabSphere -->
+                    <div class="spatial-card project-universe-card" data-universe-cat="analytics data">
+                        <div class="project-universe-media">
                             <img src="./assets/project1.png" alt="CollabSphere Platform Preview">
-                            <div class="mission-media-overlay">
-                                <button class="btn-hud btn-primary btn-sm" data-open-mission="collabsphere">
-                                    <i class="fa-solid fa-eye"></i> [ VIEW MISSION INTEL ]
+                            <div class="universe-media-portal">
+                                <button class="btn-multiverse btn-primary btn-sm" data-open-universe="collabsphere">
+                                    <i class="fa-solid fa-eye"></i> [ ENTER UNIVERSE ]
                                 </button>
                             </div>
                         </div>
-                        <div class="mission-body">
-                            <div class="mission-header-meta">
-                                <span class="mission-code-tag">MISSION // 01</span>
-                                <span class="mission-status-tag">STATUS: OPERATIONAL</span>
+                        <div class="universe-card-body">
+                            <div class="universe-meta-header">
+                                <span class="universe-node-index">MISSION // 01</span>
+                                <span class="universe-status-signal">STATUS: OPERATIONAL</span>
                             </div>
-                            <h3 class="mission-title">CollabSphere</h3>
-                            <p class="mission-desc">
+                            <h3 class="universe-card-title">CollabSphere</h3>
+                            <p class="universe-card-desc">
                                 Collaborative workspace platform integrating real-time team task synchronization with automated developer velocity tracking, burn-down analytics, and workload balance heatmaps.
                             </p>
-                            <div class="mission-stack-cluster">
-                                <span class="stack-chip">Python</span>
-                                <span class="stack-chip">SQL</span>
-                                <span class="stack-chip">Data Analytics</span>
-                                <span class="stack-chip">Chart.js</span>
+                            <div class="universe-stack-cluster">
+                                <span class="universe-chip">Python</span>
+                                <span class="universe-chip">SQL</span>
+                                <span class="universe-chip">Data Analytics</span>
+                                <span class="universe-chip">Chart.js</span>
                             </div>
-                            <div class="mission-footer-bar">
+                            <div class="universe-footer-bar">
                                 <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                                    class="mission-link">
+                                    class="universe-link">
                                     <i class="fa-brands fa-github"></i> REPOSITORY
                                 </a>
-                                <a href="#" class="mission-link primary" data-open-mission="collabsphere">
-                                    <i class="fa-solid fa-circle-info"></i> MISSION INTEL
+                                <a href="#" class="universe-link highlight" data-open-universe="collabsphere">
+                                    <i class="fa-solid fa-circle-info"></i> VIEW INTEL
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Mission 02: Ecova -->
-                    <div class="hud-card mission-card" data-mission-cat="analytics ai data">
-                        <div class="mission-media-wrapper">
-                            <img src="./assets/project2.png" alt="Ecova Sustainability Analytics Preview">
-                            <div class="mission-media-overlay">
-                                <button class="btn-hud btn-primary btn-sm" data-open-mission="ecova">
-                                    <i class="fa-solid fa-eye"></i> [ VIEW MISSION INTEL ]
+                    <!-- Project Universe 02: Ecova -->
+                    <div class="spatial-card project-universe-card" data-universe-cat="analytics ai data">
+                        <div class="project-universe-media">
+                            <img src="./assets/project2.png" alt="Ecova Platform Preview">
+                            <div class="universe-media-portal">
+                                <button class="btn-multiverse btn-primary btn-sm" data-open-universe="ecova">
+                                    <i class="fa-solid fa-eye"></i> [ ENTER UNIVERSE ]
                                 </button>
                             </div>
                         </div>
-                        <div class="mission-body">
-                            <div class="mission-header-meta">
-                                <span class="mission-code-tag">MISSION // 02</span>
-                                <span class="mission-status-tag">STATUS: DEPLOYED</span>
+                        <div class="universe-card-body">
+                            <div class="universe-meta-header">
+                                <span class="universe-node-index">MISSION // 02</span>
+                                <span class="universe-status-signal">STATUS: DEPLOYED</span>
                             </div>
-                            <h3 class="mission-title">Ecova</h3>
-                            <p class="mission-desc">
+                            <h3 class="universe-card-title">Ecova</h3>
+                            <p class="universe-card-desc">
                                 Smart environmental sustainability and green data analytics platform measuring carbon footprints, predicting facility energy demand spikes using time-series models, and generating automated ESG compliance reports.
                             </p>
-                            <div class="mission-stack-cluster">
-                                <span class="stack-chip">Data Science</span>
-                                <span class="stack-chip">Machine Learning</span>
-                                <span class="stack-chip">Time Series</span>
-                                <span class="stack-chip">ESG Insights</span>
+                            <div class="universe-stack-cluster">
+                                <span class="universe-chip">Data Science</span>
+                                <span class="universe-chip">Machine Learning</span>
+                                <span class="universe-chip">Time Series</span>
+                                <span class="universe-chip">ESG Insights</span>
                             </div>
-                            <div class="mission-footer-bar">
+                            <div class="universe-footer-bar">
                                 <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                                    class="mission-link">
+                                    class="universe-link">
                                     <i class="fa-brands fa-github"></i> REPOSITORY
                                 </a>
-                                <a href="#" class="mission-link primary" data-open-mission="ecova">
-                                    <i class="fa-solid fa-circle-info"></i> MISSION INTEL
+                                <a href="#" class="universe-link highlight" data-open-universe="ecova">
+                                    <i class="fa-solid fa-circle-info"></i> VIEW INTEL
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Mission 03: AI Interview Agent -->
-                    <div class="hud-card mission-card" data-mission-cat="ai analytics">
-                        <div class="mission-media-wrapper">
+                    <!-- Project Universe 03: AI Interview Agent -->
+                    <div class="spatial-card project-universe-card" data-universe-cat="ai analytics">
+                        <div class="project-universe-media">
                             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
                                 alt="AI Interview Agent Preview">
-                            <div class="mission-media-overlay">
-                                <button class="btn-hud btn-primary btn-sm" data-open-mission="aiinterview">
-                                    <i class="fa-solid fa-eye"></i> [ VIEW MISSION INTEL ]
+                            <div class="universe-media-portal">
+                                <button class="btn-multiverse btn-primary btn-sm" data-open-universe="aiinterview">
+                                    <i class="fa-solid fa-eye"></i> [ ENTER UNIVERSE ]
                                 </button>
                             </div>
                         </div>
-                        <div class="mission-body">
-                            <div class="mission-header-meta">
-                                <span class="mission-code-tag">MISSION // 03</span>
-                                <span class="mission-status-tag">STATUS: OPERATIONAL</span>
+                        <div class="universe-card-body">
+                            <div class="universe-meta-header">
+                                <span class="universe-node-index">MISSION // 03</span>
+                                <span class="universe-status-signal">STATUS: OPERATIONAL</span>
                             </div>
-                            <h3 class="mission-title">AI Interview Agent</h3>
-                            <p class="mission-desc">
+                            <h3 class="universe-card-title">AI Interview Agent</h3>
+                            <p class="universe-card-desc">
                                 Generative AI candidate interview assessment system analyzing audio responses, evaluating technical competency depth against rubrics, and generating multi-dimensional candidate assessment scorecards.
                             </p>
-                            <div class="mission-stack-cluster">
-                                <span class="stack-chip">Generative AI</span>
-                                <span class="stack-chip">NLP & LLMs</span>
-                                <span class="stack-chip">Speech Analytics</span>
-                                <span class="stack-chip">Sentiment Scoring</span>
+                            <div class="universe-stack-cluster">
+                                <span class="universe-chip">Generative AI</span>
+                                <span class="universe-chip">NLP & LLMs</span>
+                                <span class="universe-chip">Speech Analytics</span>
+                                <span class="universe-chip">Sentiment Scoring</span>
                             </div>
-                            <div class="mission-footer-bar">
+                            <div class="universe-footer-bar">
                                 <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                                    class="mission-link">
+                                    class="universe-link">
                                     <i class="fa-brands fa-github"></i> REPOSITORY
                                 </a>
-                                <a href="#" class="mission-link primary" data-open-mission="aiinterview">
-                                    <i class="fa-solid fa-circle-info"></i> MISSION INTEL
+                                <a href="#" class="universe-link highlight" data-open-universe="aiinterview">
+                                    <i class="fa-solid fa-circle-info"></i> VIEW INTEL
                                 </a>
                             </div>
                         </div>
@@ -449,128 +386,128 @@ print(DeveloperOperations().execute_solution())</code></pre>
             </div>
         </section>
 
-        <!-- ==================== 9. SKILLS // ARSENAL ==================== -->
-        <section class="section" id="skills">
+        <!-- STATION 04 // ARSENAL CONSTELLATION (SKILLS) -->
+        <section class="spatial-station" id="skills">
             <div class="container">
-                <div class="section-hud-header">
-                    <span class="hud-tag"><i class="fa-solid fa-shield-halved"></i> SEC-04 // ARSENAL</span>
-                    <h2 class="hud-title">Technical <span class="gradient-text">Arsenal</span></h2>
-                    <p class="hud-desc">
+                <div class="station-header">
+                    <span class="station-node-badge"><i class="fa-solid fa-shield-halved"></i> STATION 04 // ARSENAL CONSTELLATION</span>
+                    <h2 class="station-title">Technical <span class="gradient-text">Arsenal</span></h2>
+                    <p class="station-desc">
                         Interactive telemetry breakdown of my engineering toolset across analytics, machine learning, business intelligence, and database infrastructure.
                     </p>
                 </div>
 
-                <div class="arsenal-grid">
-                    <!-- Module 1: Analytics & Modeling -->
-                    <div class="hud-card arsenal-module-card">
-                        <div class="module-header">
-                            <div class="module-icon-box"><i class="fa-solid fa-calculator"></i></div>
+                <div class="constellation-grid">
+                    <!-- Sector 1: Analytics & Modeling -->
+                    <div class="spatial-card constellation-sector-card">
+                        <div class="sector-header">
+                            <div class="sector-icon-orbit"><i class="fa-solid fa-calculator"></i></div>
                             <h3>Analytics & Modeling</h3>
                         </div>
-                        <div class="module-tech-list">
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-brands fa-python"></i> Python (Pandas, NumPy)</span>
-                                    <span class="tech-status-badge">95%</span>
+                        <div class="sector-nodes-list">
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-brands fa-python"></i> Python (Pandas, NumPy)</span>
+                                    <span class="node-pct-badge">95%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="95%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="95%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-database"></i> SQL & Relational Databases</span>
-                                    <span class="tech-status-badge">92%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-database"></i> SQL & Relational Databases</span>
+                                    <span class="node-pct-badge">92%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="92%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="92%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-brain"></i> Machine Learning & Scikit-Learn</span>
-                                    <span class="tech-status-badge">85%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-brain"></i> Machine Learning & Scikit-Learn</span>
+                                    <span class="node-pct-badge">85%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="85%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="85%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-chart-area"></i> Statistical Modeling & Testing</span>
-                                    <span class="tech-status-badge">88%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-chart-area"></i> Statistical Modeling & Testing</span>
+                                    <span class="node-pct-badge">88%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="88%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="88%"></div></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Module 2: BI & Visualization -->
-                    <div class="hud-card arsenal-module-card">
-                        <div class="module-header">
-                            <div class="module-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+                    <!-- Sector 2: BI & Visualization -->
+                    <div class="spatial-card constellation-sector-card">
+                        <div class="sector-header">
+                            <div class="sector-icon-orbit"><i class="fa-solid fa-chart-pie"></i></div>
                             <h3>BI & Visualization</h3>
                         </div>
-                        <div class="module-tech-list">
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-chart-column"></i> Power BI & Tableau</span>
-                                    <span class="tech-status-badge">90%</span>
+                        <div class="sector-nodes-list">
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-chart-column"></i> Power BI & Tableau</span>
+                                    <span class="node-pct-badge">90%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="90%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="90%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-gauge-high"></i> Interactive KPI Dashboards</span>
-                                    <span class="tech-status-badge">94%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-gauge-high"></i> Interactive KPI Dashboards</span>
+                                    <span class="node-pct-badge">94%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="94%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="94%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-eye"></i> Data Storytelling & Reporting</span>
-                                    <span class="tech-status-badge">92%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-eye"></i> Data Storytelling & Reporting</span>
+                                    <span class="node-pct-badge">92%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="92%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="92%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-chart-line"></i> Chart.js & D3.js Visuals</span>
-                                    <span class="tech-status-badge">85%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-chart-line"></i> Chart.js & D3.js Visuals</span>
+                                    <span class="node-pct-badge">85%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="85%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="85%"></div></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Module 3: Data Engineering & AI -->
-                    <div class="hud-card arsenal-module-card">
-                        <div class="module-header">
-                            <div class="module-icon-box"><i class="fa-solid fa-server"></i></div>
+                    <!-- Sector 3: Data Pipelines & AI -->
+                    <div class="spatial-card constellation-sector-card">
+                        <div class="sector-header">
+                            <div class="sector-icon-orbit"><i class="fa-solid fa-server"></i></div>
                             <h3>Data Pipelines & AI</h3>
                         </div>
-                        <div class="module-tech-list">
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-network-wired"></i> ETL Pipelines & Preprocessing</span>
-                                    <span class="tech-status-badge">90%</span>
+                        <div class="sector-nodes-list">
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-network-wired"></i> ETL Pipelines & Preprocessing</span>
+                                    <span class="node-pct-badge">90%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="90%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="90%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-robot"></i> Generative AI & NLP Models</span>
-                                    <span class="tech-status-badge">86%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-robot"></i> Generative AI & NLP Models</span>
+                                    <span class="node-pct-badge">86%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="86%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="86%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-brands fa-github"></i> Git & Data Versioning</span>
-                                    <span class="tech-status-badge">90%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-brands fa-github"></i> Git & Data Versioning</span>
+                                    <span class="node-pct-badge">90%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="90%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="90%"></div></div>
                             </div>
-                            <div class="tech-item-row">
-                                <div class="tech-item-meta">
-                                    <span class="tech-name"><i class="fa-solid fa-cloud"></i> REST APIs & Cloud Ingestion</span>
-                                    <span class="tech-status-badge">85%</span>
+                            <div class="node-item-wrap">
+                                <div class="node-item-meta">
+                                    <span class="node-name"><i class="fa-solid fa-cloud"></i> REST APIs & Cloud Ingestion</span>
+                                    <span class="node-pct-badge">85%</span>
                                 </div>
-                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="85%"></div></div>
+                                <div class="node-bar-track"><div class="node-bar-fill" data-node-pct="85%"></div></div>
                             </div>
                         </div>
                     </div>
@@ -578,23 +515,23 @@ print(DeveloperOperations().execute_solution())</code></pre>
             </div>
         </section>
 
-        <!-- ==================== 10. EXPERIENCE // OPERATIONS ==================== -->
-        <section class="section" id="experience">
+        <!-- STATION 05 // OPERATIONS TIMELINE -->
+        <section class="spatial-station" id="experience">
             <div class="container">
-                <div class="section-hud-header">
-                    <span class="hud-tag"><i class="fa-solid fa-timeline"></i> SEC-05 // OPERATIONS</span>
-                    <h2 class="hud-title">Operational <span class="gradient-text">History</span></h2>
-                    <p class="hud-desc">
+                <div class="station-header">
+                    <span class="station-node-badge"><i class="fa-solid fa-timeline"></i> STATION 05 // OPERATIONS TIMELINE</span>
+                    <h2 class="station-title">Timeline <span class="gradient-text">Stream</span></h2>
+                    <p class="station-desc">
                         Chronological progression of technical deployments, research initiatives, and academic foundations.
                     </p>
                 </div>
 
-                <div class="operations-timeline">
-                    <!-- Operation 1 -->
-                    <div class="op-timeline-row">
-                        <div class="op-timeline-node"></div>
-                        <div class="hud-card op-detail-box">
-                            <span class="op-year-badge">2023 - PRESENT // ACTIVE OPERATION</span>
+                <div class="multiverse-timeline-stream">
+                    <!-- Event 1 -->
+                    <div class="timeline-event-row">
+                        <div class="timeline-event-node"></div>
+                        <div class="spatial-card timeline-event-box">
+                            <span class="event-epoch-badge">2023 - PRESENT // ACTIVE OPERATION</span>
                             <h3>Applied Data Analytics & AI Engineering</h3>
                             <h4>Independent Deployments & Research</h4>
                             <p>
@@ -603,11 +540,11 @@ print(DeveloperOperations().execute_solution())</code></pre>
                         </div>
                     </div>
 
-                    <!-- Operation 2 -->
-                    <div class="op-timeline-row">
-                        <div class="op-timeline-node"></div>
-                        <div class="hud-card op-detail-box">
-                            <span class="op-year-badge">2021 - 2025 // ACADEMIC FOUNDATIONS</span>
+                    <!-- Event 2 -->
+                    <div class="timeline-event-row">
+                        <div class="timeline-event-node"></div>
+                        <div class="spatial-card timeline-event-box">
+                            <span class="event-epoch-badge">2021 - 2025 // ACADEMIC FOUNDATIONS</span>
                             <h3>Bachelor Degree in Computer Science / Technology</h3>
                             <h4>University Education</h4>
                             <p>
@@ -616,11 +553,11 @@ print(DeveloperOperations().execute_solution())</code></pre>
                         </div>
                     </div>
 
-                    <!-- Operation 3 -->
-                    <div class="op-timeline-row">
-                        <div class="op-timeline-node"></div>
-                        <div class="hud-card op-detail-box">
-                            <span class="op-year-badge">2024 // CERTIFIED RECORD</span>
+                    <!-- Event 3 -->
+                    <div class="timeline-event-row">
+                        <div class="timeline-event-node"></div>
+                        <div class="spatial-card timeline-event-box">
+                            <span class="event-epoch-badge">2024 // CERTIFIED RECORD</span>
                             <h3>Data Analytics & Version Control Training</h3>
                             <h4>Technical Training & Certifications</h4>
                             <p>
@@ -632,46 +569,46 @@ print(DeveloperOperations().execute_solution())</code></pre>
             </div>
         </section>
 
-        <!-- ==================== 11. ACHIEVEMENTS // RECORDS ==================== -->
-        <section class="section" id="records">
+        <!-- STATION 06 // VERIFIED RECORDS -->
+        <section class="spatial-station" id="records">
             <div class="container">
-                <div class="section-hud-header">
-                    <span class="hud-tag"><i class="fa-solid fa-trophy"></i> SEC-06 // RECORDS</span>
-                    <h2 class="hud-title">Verified <span class="gradient-text">Records</span></h2>
-                    <p class="hud-desc">
+                <div class="station-header">
+                    <span class="station-node-badge"><i class="fa-solid fa-trophy"></i> STATION 06 // RECORDS</span>
+                    <h2 class="station-title">Verified <span class="gradient-text">Records</span></h2>
+                    <p class="station-desc">
                         Quantified engineering impact and operational delivery metrics.
                     </p>
                 </div>
 
-                <div class="records-stats-grid">
-                    <div class="hud-card record-stat-card">
-                        <div class="record-number-row">
-                            <span class="stat-counter-val" data-target="15">15</span>
-                            <span class="stat-sign">+</span>
+                <div class="multiverse-records-grid">
+                    <div class="spatial-card record-metric-card">
+                        <div class="record-val-row">
+                            <span class="stat-counter-num" data-target="15">15</span>
+                            <span class="stat-counter-plus">+</span>
                         </div>
                         <p>Missions Completed</p>
                     </div>
 
-                    <div class="hud-card record-stat-card">
-                        <div class="record-number-row">
-                            <span class="stat-counter-val" data-target="500">500</span>
-                            <span class="stat-sign">+</span>
+                    <div class="spatial-card record-metric-card">
+                        <div class="record-val-row">
+                            <span class="stat-counter-num" data-target="500">500</span>
+                            <span class="stat-counter-plus">+</span>
                         </div>
                         <p>GitHub Commits & Contribs</p>
                     </div>
 
-                    <div class="hud-card record-stat-card">
-                        <div class="record-number-row">
-                            <span class="stat-counter-val" data-target="100">100</span>
-                            <span class="stat-sign">%</span>
+                    <div class="spatial-card record-metric-card">
+                        <div class="record-val-row">
+                            <span class="stat-counter-num" data-target="100">100</span>
+                            <span class="stat-counter-plus">%</span>
                         </div>
                         <p>Data Precision & Quality</p>
                     </div>
 
-                    <div class="hud-card record-stat-card">
-                        <div class="record-number-row">
-                            <span class="stat-counter-val" data-target="3">3</span>
-                            <span class="stat-sign">+</span>
+                    <div class="spatial-card record-metric-card">
+                        <div class="record-val-row">
+                            <span class="stat-counter-num" data-target="3">3</span>
+                            <span class="stat-counter-plus">+</span>
                         </div>
                         <p>Years Operational Dev</p>
                     </div>
@@ -679,37 +616,37 @@ print(DeveloperOperations().execute_solution())</code></pre>
             </div>
         </section>
 
-        <!-- ==================== 12. RESUME // INTEL ==================== -->
-        <section class="section" id="intel">
+        <!-- STATION 07 // INTEL DOSSIER (RESUME) -->
+        <section class="spatial-station" id="intel">
             <div class="container">
-                <div class="section-hud-header">
-                    <span class="hud-tag"><i class="fa-solid fa-file-shield"></i> SEC-07 // INTEL</span>
-                    <h2 class="hud-title">Classified <span class="gradient-text">Developer Intelligence</span></h2>
-                    <p class="hud-desc">
+                <div class="station-header">
+                    <span class="station-node-badge"><i class="fa-solid fa-file-shield"></i> STATION 07 // INTEL DOSSIER</span>
+                    <h2 class="station-title">Classified <span class="gradient-text">Intelligence</span></h2>
+                    <p class="station-desc">
                         Comprehensive summary of professional capabilities, engineering qualifications, and resume dossier.
                     </p>
                 </div>
 
-                <div class="intel-card-wrapper">
+                <div class="spatial-card intel-dossier-card">
                     <div class="intel-text">
                         <h3>Dossier Summary // Mohaneshwaran M</h3>
                         <p>
                             Quantitative analytics developer and software engineer skilled in predictive modeling, SQL database optimization, data storytelling, and real-time AI solutions. Dedicated to building reliable, high-performance systems for real-world impact.
                         </p>
-                        <div class="intel-spec-table">
-                            <div class="intel-spec-unit">
+                        <div class="intel-spec-matrix">
+                            <div class="spec-unit">
                                 <span>EDUCATION</span>
                                 <strong>B.Tech / B.E. (Computer Science)</strong>
                             </div>
-                            <div class="intel-spec-unit">
+                            <div class="spec-unit">
                                 <span>SPECIALIZATION</span>
                                 <strong>Data Analytics & AI Engineering</strong>
                             </div>
-                            <div class="intel-spec-unit">
+                            <div class="spec-unit">
                                 <span>AVAILABILITY</span>
                                 <strong>Placements, Internships & Roles</strong>
                             </div>
-                            <div class="intel-spec-unit">
+                            <div class="spec-unit">
                                 <span>SECURITY STATUS</span>
                                 <strong>Verified Operational</strong>
                             </div>
@@ -718,186 +655,170 @@ print(DeveloperOperations().execute_solution())</code></pre>
 
                     <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: center;">
                         <a href="mailto:mohaneshv32007@gmail.com?subject=Resume%20Request%20-%20Mohaneshwaran%20M"
-                            class="btn-hud btn-primary" style="width: 100%; text-align: center;">
-                            <i class="fa-solid fa-download"></i> [ REQUEST / DOWNLOAD RESUME ]
+                            class="btn-multiverse btn-primary" style="width: 100%; text-align: center;">
+                            <i class="fa-solid fa-download"></i> [ DOWNLOAD / VIEW RESUME ]
                         </a>
-                        <a href="#contact" class="btn-hud btn-secondary" style="width: 100%; text-align: center;">
-                            <i class="fa-solid fa-paper-plane"></i> [ OPEN TRANSMISSION CHANNEL ]
+                        <a href="#contact" class="btn-multiverse btn-glass" style="width: 100%; text-align: center;">
+                            <i class="fa-solid fa-paper-plane"></i> [ OPEN COMMS CHANNEL ]
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 13. CONTACT // OPEN CHANNEL ==================== -->
-        <section class="section" id="contact">
+        <!-- STATION 08 // CONVERGENCE (CONTACT) -->
+        <section class="spatial-station" id="contact">
             <div class="container">
-                <div class="section-hud-header">
-                    <span class="hud-tag"><i class="fa-solid fa-satellite-dish"></i> SEC-08 // OPEN CHANNEL</span>
-                    <h2 class="hud-title">Transmit <span class="gradient-text">Message</span></h2>
-                    <p class="hud-desc">
-                        Ready to build meaningful data platforms or discuss career opportunities? Transmit a message directly into the command center.
+                <div class="station-header">
+                    <span class="station-node-badge"><i class="fa-solid fa-satellite-dish"></i> STATION 08 // CONVERGENCE</span>
+                    <h2 class="station-title">Open <span class="gradient-text">Frequencies</span></h2>
+                    <p class="station-desc">
+                        Ready to collaborate, engineer meaningful data platforms, or discuss career opportunities? Transmit a direct frequency payload.
                     </p>
                 </div>
 
-                <div class="open-channel-grid">
-                    <!-- Direct Comms Nodes -->
-                    <div class="channel-nodes-stack">
-                        <a href="mailto:mohaneshv32007@gmail.com" class="hud-card channel-node-card">
-                            <div class="channel-node-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="channel-node-details">
+                <div class="convergence-layout-grid">
+                    <!-- Frequencies Stack -->
+                    <div class="convergence-frequencies">
+                        <a href="mailto:mohaneshv32007@gmail.com" class="spatial-card frequency-node-card">
+                            <div class="frequency-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="frequency-details">
                                 <span>DIRECT FREQUENCY</span>
                                 <h4>mohaneshv32007@gmail.com</h4>
                             </div>
                         </a>
 
-                        <a href="tel:+918807050831" class="hud-card channel-node-card">
-                            <div class="channel-node-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="channel-node-details">
+                        <a href="tel:+918807050831" class="spatial-card frequency-node-card">
+                            <div class="frequency-icon-box"><i class="fa-solid fa-phone"></i></div>
+                            <div class="frequency-details">
                                 <span>DIRECT LINE</span>
                                 <h4>+91 8807050831</h4>
                             </div>
                         </a>
 
                         <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
-                            rel="noopener noreferrer" class="hud-card channel-node-card">
-                            <div class="channel-node-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-                            <div class="channel-node-details">
-                                <span>LINKEDIN COMMS</span>
+                            rel="noopener noreferrer" class="spatial-card frequency-node-card">
+                            <div class="frequency-icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="frequency-details">
+                                <span>LINKEDIN FREQUENCY</span>
                                 <h4>Mohaneshwaran M</h4>
                             </div>
                         </a>
 
                         <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                            class="hud-card channel-node-card">
-                            <div class="channel-node-icon"><i class="fa-brands fa-github"></i></div>
-                            <div class="channel-node-details">
+                            class="spatial-card frequency-node-card">
+                            <div class="frequency-icon-box"><i class="fa-brands fa-github"></i></div>
+                            <div class="frequency-details">
                                 <span>GITHUB REPOSITORIES</span>
                                 <h4>Mohan5047</h4>
                             </div>
                         </a>
 
-                        <div class="hud-card channel-node-card" style="cursor: default;">
-                            <div class="channel-node-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="channel-node-details">
+                        <div class="spatial-card frequency-node-card" style="cursor: default;">
+                            <div class="frequency-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="frequency-details">
                                 <span>BASE LOCATION</span>
                                 <h4>Tamil Nadu, India</h4>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Transmission Form -->
-                    <div class="hud-card transmission-form-card">
-                        <form id="open-channel-form">
-                            <div class="form-input-grp">
-                                <label for="sender-name">SENDER IDENTIFICATION *</label>
-                                <input type="text" id="sender-name" class="hud-input-ctrl"
+                    <!-- Transmission Console -->
+                    <div class="spatial-card transmission-console-card">
+                        <form id="convergence-transmission-form">
+                            <div class="console-input-group">
+                                <label for="sender-identity">SENDER IDENTIFICATION *</label>
+                                <input type="text" id="sender-identity" class="multiverse-input-field"
                                     placeholder="e.g. Alex Johnson // Recruiter" required>
                             </div>
-                            <div class="form-input-grp">
-                                <label for="sender-email">RETURN FREQUENCY (EMAIL) *</label>
-                                <input type="email" id="sender-email" class="hud-input-ctrl"
+                            <div class="console-input-group">
+                                <label for="sender-frequency">RETURN FREQUENCY (EMAIL) *</label>
+                                <input type="email" id="sender-frequency" class="multiverse-input-field"
                                     placeholder="e.g. alex@organization.com" required>
                             </div>
-                            <div class="form-input-grp">
-                                <label for="transmission-subject">TRANSMISSION SUBJECT</label>
-                                <input type="text" id="transmission-subject" class="hud-input-ctrl"
-                                    placeholder="Data Analytics Role / Project Collaboration">
+                            <div class="console-input-group">
+                                <label for="transmission-topic">TRANSMISSION TOPIC</label>
+                                <input type="text" id="transmission-topic" class="multiverse-input-field"
+                                    placeholder="Data Analytics Role / Project Opportunity">
                             </div>
-                            <div class="form-input-grp">
-                                <label for="transmission-msg">TRANSMISSION PAYLOAD *</label>
-                                <textarea id="transmission-msg" class="hud-input-ctrl"
-                                    placeholder="Enter your message transmission here..." required></textarea>
+                            <div class="console-input-group">
+                                <label for="transmission-payload">TRANSMISSION PAYLOAD *</label>
+                                <textarea id="transmission-payload" class="multiverse-input-field"
+                                    placeholder="Enter your message transmission payload here..." required></textarea>
                             </div>
-                            <button type="submit" class="btn-hud btn-primary" style="width: 100%;">
-                                <i class="fa-solid fa-paper-plane"></i> [ TRANSMIT PAYLOAD ]
+                            <button type="submit" class="btn-multiverse btn-primary" style="width: 100%;">
+                                <i class="fa-solid fa-paper-plane"></i> [ TRANSMIT FREQUENCY ]
                             </button>
-                            <div class="transmission-toast" id="transmission-toast">
-                                <i class="fa-solid fa-circle-check"></i> TRANSMISSION CONFIRMED: Message received by M-VERSE command center. I will respond promptly!
+                            <div class="transmission-feedback-toast" id="transmission-feedback-toast">
+                                <i class="fa-solid fa-circle-check"></i> TRANSMISSION DELIVERED: Message received by Mohaneshwaran M. I will respond promptly!
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 
-    <!-- ==================== 14. FOOTER ==================== -->
+    <!-- ==================== 7. MULTIVERSE FOOTER ==================== -->
     <footer>
         <div class="container">
-            <div class="footer-inner">
-                <a href="#" class="hud-logo">
-                    <span>M-VERSE</span> <span class="hud-logo-tag">MOHANESWARAN M.</span>
+            <div class="multiverse-footer-inner">
+                <a href="#origin" class="multiverse-logo-tag" style="font-size: 0.9rem; padding: 0.5rem 1.2rem;">
+                    <span>MOHANESWARAN M // MULTIVERSE</span>
                 </a>
 
-                <ul class="footer-nav-track">
-                    <li><a href="#hero">Command</a></li>
-                    <li><a href="#about">Identity</a></li>
-                    <li><a href="#projects">Missions</a></li>
-                    <li><a href="#skills">Arsenal</a></li>
-                    <li><a href="#experience">Operations</a></li>
-                    <li><a href="#records">Records</a></li>
-                    <li><a href="#intel">Intel</a></li>
-                    <li><a href="#contact">Channel</a></li>
-                </ul>
-
-                <div class="footer-social-track">
+                <div class="footer-social-orbit">
                     <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                        class="footer-icon-circle" title="GitHub" aria-label="GitHub"><i
+                        class="footer-orbit-btn" title="GitHub" aria-label="GitHub"><i
                             class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
-                        rel="noopener noreferrer" class="footer-icon-circle" title="LinkedIn" aria-label="LinkedIn"><i
+                        rel="noopener noreferrer" class="footer-orbit-btn" title="LinkedIn" aria-label="LinkedIn"><i
                             class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="mailto:mohaneshv32007@gmail.com" class="footer-icon-circle" title="Email"
+                    <a href="mailto:mohaneshv32007@gmail.com" class="footer-orbit-btn" title="Email"
                         aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="tel:+918807050831" class="footer-icon-circle" title="Phone" aria-label="Phone"><i
+                    <a href="tel:+918807050831" class="footer-orbit-btn" title="Phone" aria-label="Phone"><i
                             class="fa-solid fa-phone"></i></a>
                 </div>
 
-                <p class="footer-intel-note">
-                    &copy; 2026 Mohaneshwaran M. Built with M-VERSE Developer Operations Engine (HTML5, CSS3, JS). System Status: Operational.
+                <p class="footer-copyright-note">
+                    &copy; 2026 Mohaneshwaran M. Engineered as a Connected 3D Developer Multiverse (Three.js, WebGL, HTML5, CSS3, JS).
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== 15. MISSION INTEL MODAL ==================== -->
-    <div class="hud-modal-overlay" id="hud-modal-overlay" role="dialog" aria-modal="true"
-        aria-labelledby="modal-mission-headline">
-        <div class="hud-modal-window">
-            <button class="modal-exit-btn" id="modal-exit-btn" aria-label="Close Mission Intel">
+    <!-- ==================== 8. PROJECT MULTIVERSE MODAL ==================== -->
+    <div class="multiverse-modal-overlay" id="multiverse-modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="modal-project-title">
+        <div class="multiverse-modal-window">
+            <button class="modal-close-trigger" id="modal-close-trigger" aria-label="Close Project Universe">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="modal-intel-preview">
-                <img id="modal-intel-img" src="./assets/project1.png" alt="Mission Intel Preview">
+            <div class="modal-portal-preview">
+                <img id="modal-portal-img" src="./assets/project1.png" alt="Project Universe Preview">
             </div>
 
-            <div class="modal-content-area">
-                <h3 class="modal-mission-headline" id="modal-mission-headline">Mission Title</h3>
-                <div class="modal-tag-cluster" id="modal-tag-cluster"></div>
-                <p class="modal-overview-text" id="modal-overview-text">Mission analytical overview...</p>
+            <div class="modal-intel-content">
+                <h3 class="modal-project-title" id="modal-project-title">Project Universe Title</h3>
+                <div class="modal-tag-galaxy" id="modal-tag-galaxy"></div>
+                <p class="modal-narrative-text" id="modal-narrative-text">Project analytical narrative...</p>
 
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem; color: var(--text-primary);">Key Architecture &
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem; color: var(--text-star);">Key Architecture &
                     Operational Features:</h4>
-                <ul class="modal-features-checklist" id="modal-features-checklist"></ul>
+                <ul class="modal-features-list" id="modal-features-list"></ul>
 
-                <div class="modal-action-row">
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-hud btn-primary" id="modal-github-btn">
+                <div class="modal-action-buttons">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-multiverse btn-primary" id="modal-github-btn">
                         <i class="fa-brands fa-github"></i> GITHUB REPOSITORY
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-hud btn-outline" id="modal-live-btn">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE MISSION PREVIEW
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-multiverse btn-outline" id="modal-live-btn">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE PROJECT DEMO
                     </a>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Floating Back to Top Button -->
-    <button class="hud-back-top" id="hud-back-top" aria-label="Scroll to top" title="Scroll to top">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
 
     <!-- Custom JavaScript Engine -->
     <script src="js/script.js"></script>

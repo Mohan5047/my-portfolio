@@ -1,34 +1,33 @@
 /**
  * ==========================================================================
- * M-VERSE // DEVELOPER OPERATIONS - JAVASCRIPT ENGINE
- * Features: Cinematic Intro Bootloader, Particle Canvas Background,
- *           Custom HUD Cursor, Real-Time Telemetry Clock, Role Typing,
- *           Mission Intel Modal, Arsenal Observers, Web Audio Synthesizer,
- *           Transmission Form Validation & Theme Switcher
+ * MOHANESWARAN — DEVELOPER MULTIVERSE ENGINE
+ * Connected 3D Spatial Universe, Three.js Camera Controller,
+ * Branching Spline Lines, Particle Constellations, Contextual Cursor,
+ * Dynamic Role Typing, Project Universes, and Spatial Navigation
  * ==========================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ==================== 1. CINEMATIC INTRO BOOTLOADER ====================
-    const introOverlay = document.getElementById('cinematic-intro');
-    const introStatus = document.getElementById('intro-status-text');
-    const introProgressBar = document.getElementById('intro-progress-bar');
-    const introSkipBtn = document.getElementById('intro-skip-btn');
+    // ==================== 1. CINEMATIC MULTIVERSE INTRO ====================
+    const introOverlay = document.getElementById('multiverse-intro');
+    const introStatus = document.getElementById('intro-stream-message');
+    const introProgressBar = document.getElementById('intro-timeline-fill');
+    const introSkipBtn = document.getElementById('intro-skip-button');
 
     const introSteps = [
-        { text: '> INITIALIZING M-VERSE DEVELOPER CORE...', progress: 20, delay: 400 },
-        { text: '> SYSTEM ONLINE // QUANTUM NODES SYNCHRONIZED', progress: 45, delay: 500 },
-        { text: '> MISSION DATABASE CONNECTED // TELEMETRY STABLE', progress: 75, delay: 500 },
-        { text: '> HUD COMMAND CENTER READY // WELCOME, MOHANESWARAN', progress: 100, delay: 600 }
+        { text: '> DETECTING MULTIVERSE SINGULARITY POINT...', progress: 25, delay: 400 },
+        { text: '> EXPANDING CONNECTED TIMELINES & NEURAL PATHS...', progress: 50, delay: 500 },
+        { text: '> SYNCHRONIZING ARSENAL & MISSION REPOSITORIES...', progress: 80, delay: 500 },
+        { text: '> MULTIVERSE READY // WELCOME TO MOHANESWARAN\'S REALM', progress: 100, delay: 600 }
     ];
 
-    const hasIntroPlayed = sessionStorage.getItem('mverse_intro_completed');
+    const hasIntroPlayed = sessionStorage.getItem('multiverse_intro_seen');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function finishIntro() {
         if (!introOverlay) return;
         introOverlay.classList.add('hidden');
-        sessionStorage.setItem('mverse_intro_completed', 'true');
+        sessionStorage.setItem('multiverse_intro_seen', 'true');
         setTimeout(() => {
             introOverlay.style.display = 'none';
         }, 800);
@@ -50,11 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         setTimeout(runIntroSequence, 300);
-
         introSkipBtn?.addEventListener('click', finishIntro);
     }
 
-    // ==================== 2. WEB AUDIO UI SOUND SYNTHESIZER (MUTED BY DEFAULT) ====================
+    // ==================== 2. WEB AUDIO UI SOUND SYNTHESIZER ====================
     let audioContext = null;
     let isSoundEnabled = false;
     const soundToggleBtn = document.getElementById('sound-toggle-btn');
@@ -67,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function playHudBeep(freq = 800, duration = 0.04, type = 'sine') {
+    function playSpatialBeep(freq = 800, duration = 0.04, type = 'sine') {
         if (!isSoundEnabled || !audioContext) return;
         try {
             if (audioContext.state === 'suspended') audioContext.resume();
@@ -81,9 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gain.connect(audioContext.destination);
             osc.start();
             osc.stop(audioContext.currentTime + duration);
-        } catch (e) {
-            // Audio policy fallback
-        }
+        } catch (e) {}
     }
 
     if (soundToggleBtn) {
@@ -94,25 +90,185 @@ document.addEventListener('DOMContentLoaded', () => {
                 soundIcon.className = isSoundEnabled ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
             }
             soundToggleBtn.title = isSoundEnabled ? 'Audio Feedback: Active' : 'Audio Feedback: Muted';
-            if (isSoundEnabled) playHudBeep(920, 0.08, 'triangle');
+            if (isSoundEnabled) playSpatialBeep(920, 0.08, 'triangle');
         });
     }
 
-    // Attach subtle blip to buttons on hover/click when enabled
-    document.querySelectorAll('.btn-hud, .mission-tab, .comms-link-btn, .nav-links-menu a').forEach(el => {
-        el.addEventListener('mouseenter', () => playHudBeep(650, 0.03, 'sine'));
-        el.addEventListener('click', () => playHudBeep(1050, 0.05, 'triangle'));
+    // ==================== 3. THREE.JS 3D MULTIVERSE SPATIAL ENGINE ====================
+    const canvasContainer = document.getElementById('multiverse-canvas');
+    let scene, camera, renderer;
+    let starField, nodeMeshGroup, splineCurves = [], energyPhotons = [];
+    let targetCameraY = 0;
+    let targetCameraX = 0;
+    let mouseNormX = 0;
+    let mouseNormY = 0;
+
+    const spatialWaypoints = [
+        { name: 'origin', x: 0, y: 0, z: 25 },
+        { name: 'about', x: 6, y: -25, z: 22 },
+        { name: 'projects', x: -8, y: -55, z: 24 },
+        { name: 'skills', x: 8, y: -85, z: 20 },
+        { name: 'experience', x: -6, y: -115, z: 22 },
+        { name: 'intel', x: 6, y: -145, z: 22 },
+        { name: 'contact', x: 0, y: -175, z: 20 }
+    ];
+
+    function initThreeMultiverse() {
+        if (!canvasContainer || typeof THREE === 'undefined') return;
+
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 0, 25);
+
+        renderer = new THREE.WebGLRenderer({
+            canvas: canvasContainer,
+            alpha: true,
+            antialias: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // 1. 3D Particle Starfield
+        const particleCount = window.innerWidth < 768 ? 400 : 900;
+        const particleGeo = new THREE.BufferGeometry();
+        const particlePos = new Float32Array(particleCount * 3);
+        const particleColors = new Float32Array(particleCount * 3);
+
+        const color1 = new THREE.Color(0x6366f1);
+        const color2 = new THREE.Color(0x00f0ff);
+        const color3 = new THREE.Color(0x8b5cf6);
+
+        for (let i = 0; i < particleCount; i++) {
+            particlePos[i * 3] = (Math.random() - 0.5) * 140;
+            particlePos[i * 3 + 1] = (Math.random() - 0.5) * 220 - 70;
+            particlePos[i * 3 + 2] = (Math.random() - 0.5) * 80;
+
+            const mixedColor = Math.random() > 0.5 ? color1.clone().lerp(color2, Math.random()) : color3;
+            particleColors[i * 3] = mixedColor.r;
+            particleColors[i * 3 + 1] = mixedColor.g;
+            particleColors[i * 3 + 2] = mixedColor.b;
+        }
+
+        particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos, 3));
+        particleGeo.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
+
+        const particleMat = new THREE.PointsMaterial({
+            size: 1.5,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.75,
+            blending: THREE.AdditiveBlending
+        });
+
+        starField = new THREE.Points(particleGeo, particleMat);
+        scene.add(starField);
+
+        // 2. Multiverse Nodes & Connecting Bezier Splines
+        nodeMeshGroup = new THREE.Group();
+        scene.add(nodeMeshGroup);
+
+        const sphereGeo = new THREE.SphereGeometry(1.2, 24, 24);
+        const nodeMat = new THREE.MeshBasicMaterial({
+            color: 0x00f0ff,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.6
+        });
+
+        const points = [];
+        spatialWaypoints.forEach((wp) => {
+            const nodeMesh = new THREE.Mesh(sphereGeo, nodeMat);
+            nodeMesh.position.set(wp.x, wp.y, -5);
+            nodeMeshGroup.add(nodeMesh);
+            points.push(new THREE.Vector3(wp.x, wp.y, -5));
+        });
+
+        // Generate smooth connecting spline curve between nodes
+        const spline = new THREE.CatmullRomCurve3(points);
+        const splineGeo = new THREE.BufferGeometry().setFromPoints(spline.getPoints(200));
+        const splineMat = new THREE.LineBasicMaterial({
+            color: 0x6366f1,
+            transparent: true,
+            opacity: 0.35,
+            linewidth: 2
+        });
+        const splineLine = new THREE.Line(splineGeo, splineMat);
+        scene.add(splineLine);
+
+        // 3. Energy Photons traveling along spline
+        const photonGeo = new THREE.SphereGeometry(0.35, 12, 12);
+        const photonMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
+
+        for (let i = 0; i < 8; i++) {
+            const photon = new THREE.Mesh(photonGeo, photonMat);
+            photon.userData = { progress: i * 0.125, speed: 0.0015 + Math.random() * 0.001 };
+            scene.add(photon);
+            energyPhotons.push({ mesh: photon, spline: spline });
+        }
+
+        animateThreeScene();
+    }
+
+    function animateThreeScene() {
+        requestAnimationFrame(animateThreeScene);
+
+        if (document.hidden) return;
+
+        // Rotate starfield slowly
+        if (starField) {
+            starField.rotation.y += 0.0004;
+        }
+
+        // Animate nodes pulsation
+        if (nodeMeshGroup) {
+            nodeMeshGroup.children.forEach((child, i) => {
+                child.rotation.y += 0.01;
+                child.rotation.x += 0.005;
+                const scale = 1 + Math.sin(Date.now() * 0.002 + i) * 0.15;
+                child.scale.set(scale, scale, scale);
+            });
+        }
+
+        // Animate traveling energy photons
+        energyPhotons.forEach(item => {
+            item.mesh.userData.progress += item.mesh.userData.speed;
+            if (item.mesh.userData.progress > 1) item.mesh.userData.progress = 0;
+            const pos = item.spline.getPoint(item.mesh.userData.progress);
+            if (pos) item.mesh.position.copy(pos);
+        });
+
+        // Camera Smooth Interpolation to scroll target + mouse parallax
+        camera.position.y += (targetCameraY - camera.position.y) * 0.06;
+        camera.position.x += ((targetCameraX + mouseNormX * 3) - camera.position.x) * 0.06;
+        camera.lookAt(camera.position.x * 0.2, camera.position.y, 0);
+
+        renderer.render(scene, camera);
+    }
+
+    initThreeMultiverse();
+
+    window.addEventListener('resize', () => {
+        if (!camera || !renderer) return;
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    // ==================== 3. CUSTOM HUD CURSOR ====================
-    const cursorDot = document.getElementById('hud-cursor-dot');
-    const cursorRing = document.getElementById('hud-cursor-ring');
+    window.addEventListener('mousemove', (e) => {
+        mouseNormX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseNormY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
 
-    if (cursorDot && cursorRing && window.matchMedia('(pointer: fine)').matches) {
+    // ==================== 4. CONTEXTUAL MULTIVERSE CURSOR ====================
+    const cursorDot = document.getElementById('multiverse-cursor-dot');
+    const cursorOrb = document.getElementById('multiverse-cursor-orb');
+    const cursorTag = document.getElementById('cursor-action-tag');
+
+    if (cursorDot && cursorOrb && window.matchMedia('(pointer: fine)').matches) {
         let mouseX = window.innerWidth / 2;
         let mouseY = window.innerHeight / 2;
-        let ringX = mouseX;
-        let ringY = mouseY;
+        let orbX = mouseX;
+        let orbY = mouseY;
 
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
@@ -121,157 +277,124 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorDot.style.top = `${mouseY}px`;
         });
 
-        function animateCursorRing() {
-            ringX += (mouseX - ringX) * 0.18;
-            ringY += (mouseY - ringY) * 0.18;
-            cursorRing.style.left = `${ringX}px`;
-            cursorRing.style.top = `${ringY}px`;
-            requestAnimationFrame(animateCursorRing);
+        function animateCursorOrb() {
+            orbX += (mouseX - orbX) * 0.16;
+            orbY += (mouseY - orbY) * 0.16;
+            cursorOrb.style.left = `${orbX}px`;
+            cursorOrb.style.top = `${orbY}px`;
+            requestAnimationFrame(animateCursorOrb);
         }
-        animateCursorRing();
+        animateCursorOrb();
 
-        const interactives = document.querySelectorAll('a, button, input, textarea, .hud-card, .mission-tab');
-        interactives.forEach(item => {
-            item.addEventListener('mouseenter', () => cursorRing.classList.add('active'));
-            item.addEventListener('mouseleave', () => cursorRing.classList.remove('active'));
-        });
-    }
-
-    // ==================== 4. PARTICLES CANVAS BACKGROUND ====================
-    const canvas = document.getElementById('hud-canvas-bg');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width = (canvas.width = window.innerWidth);
-        let height = (canvas.height = window.innerHeight);
-
-        const particleCount = window.innerWidth < 768 ? 35 : 75;
-        const particles = [];
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                radius: Math.random() * 1.8 + 0.8,
-                alpha: Math.random() * 0.5 + 0.2
+        function bindCursorInteraction(selector, tagText) {
+            document.querySelectorAll(selector).forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorOrb.classList.add('active');
+                    if (cursorTag) cursorTag.textContent = tagText;
+                    playSpatialBeep(620, 0.03, 'sine');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorOrb.classList.remove('active');
+                    if (cursorTag) cursorTag.textContent = '';
+                });
             });
         }
 
-        function drawParticles() {
-            if (document.hidden) {
-                requestAnimationFrame(drawParticles);
-                return;
+        bindCursorInteraction('.dock-nav-item', 'TRAVEL');
+        bindCursorInteraction('.btn-multiverse, button', 'ENTER');
+        bindCursorInteraction('.project-universe-card', 'EXPLORE');
+        bindCursorInteraction('.frequency-node-card', 'COMMS');
+    }
+
+    // ==================== 5. SPATIAL SCROLL & CAMERA NAVIGATION ====================
+    const stations = document.querySelectorAll('.spatial-station');
+    const dockItems = document.querySelectorAll('.dock-nav-item');
+
+    function updateSpatialJourney() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPct = totalHeight > 0 ? scrollY / totalHeight : 0;
+
+        // Map scroll to 3D camera travel
+        targetCameraY = -scrollPct * 175;
+        targetCameraX = Math.sin(scrollPct * Math.PI * 3) * 6;
+
+        let activeStation = 'origin';
+        stations.forEach((station) => {
+            const rect = station.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.2) {
+                activeStation = station.getAttribute('id') || 'origin';
             }
+        });
 
-            ctx.clearRect(0, 0, width, height);
-
-            const isLight = document.body.classList.contains('light-mode');
-            const dotColor = isLight ? 'rgba(79, 70, 229, ' : 'rgba(0, 240, 255, ';
-            const lineColor = isLight ? 'rgba(79, 70, 229, 0.05)' : 'rgba(0, 240, 255, 0.04)';
-
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                p.x += p.vx;
-                p.y += p.vy;
-
-                if (p.x < 0) p.x = width;
-                if (p.x > width) p.x = 0;
-                if (p.y < 0) p.y = height;
-                if (p.y > height) p.y = 0;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `${dotColor}${p.alpha})`;
-                ctx.fill();
-
-                for (let j = i + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const dx = p.x - p2.x;
-                    const dy = p.y - p2.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < 110) {
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = lineColor;
-                        ctx.stroke();
-                    }
-                }
+        dockItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${activeStation}`) {
+                item.classList.add('active');
             }
-            requestAnimationFrame(drawParticles);
-        }
-        drawParticles();
-
-        window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
         });
     }
 
-    // ==================== 5. REAL-TIME TELEMETRY CLOCK ====================
-    const telemetryClock = document.getElementById('telemetry-clock');
-    function updateTelemetryClock() {
-        if (!telemetryClock) return;
-        const now = new Date();
-        const utcHours = String(now.getUTCHours()).padStart(2, '0');
-        const utcMinutes = String(now.getUTCMinutes()).padStart(2, '0');
-        const utcSeconds = String(now.getUTCSeconds()).padStart(2, '0');
-        telemetryClock.textContent = `UTC ${utcHours}:${utcMinutes}:${utcSeconds}`;
-    }
-    updateTelemetryClock();
-    setInterval(updateTelemetryClock, 1000);
+    window.addEventListener('scroll', updateSpatialJourney, { passive: true });
+    updateSpatialJourney();
 
-    // ==================== 6. TYPING ROLE EFFECT ====================
-    const typedRoleElement = document.getElementById('typed-role-text');
-    const operationalRoles = [
+    dockItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href');
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+                playSpatialBeep(1080, 0.06, 'triangle');
+            }
+        });
+    });
+
+    // ==================== 6. DYNAMIC ROLE TYPING ====================
+    const typedRoleElement = document.getElementById('typed-multiverse-role');
+    const multiverseRoles = [
         'Data Analytics Specialist',
         'Business Intelligence & AI Engineer',
-        'Machine Learning & Predictive Modeler',
-        'SQL & Python Pipeline Architect',
+        'Predictive Modeling & Statistical Architect',
+        'SQL & Python Pipeline Specialist',
         'Full-Stack Data Solutions Developer'
     ];
-    let roleIndex = 0;
-    let charIndex = 0;
+    let roleIdx = 0;
+    let charIdx = 0;
     let isDeleting = false;
-    const typeSpeed = 80;
-    const deleteSpeed = 40;
-    const holdTime = 1800;
 
-    function runRoleTyping() {
+    function runMultiverseTyping() {
         if (!typedRoleElement) return;
-
-        const currentRole = operationalRoles[roleIndex];
+        const current = multiverseRoles[roleIdx];
 
         if (isDeleting) {
-            typedRoleElement.textContent = currentRole.substring(0, charIndex - 1);
-            charIndex--;
+            typedRoleElement.textContent = current.substring(0, charIdx - 1);
+            charIdx--;
         } else {
-            typedRoleElement.textContent = currentRole.substring(0, charIndex + 1);
-            charIndex++;
+            typedRoleElement.textContent = current.substring(0, charIdx + 1);
+            charIdx++;
         }
 
-        let delay = isDeleting ? deleteSpeed : typeSpeed;
+        let delay = isDeleting ? 40 : 80;
 
-        if (!isDeleting && charIndex === currentRole.length) {
-            delay = holdTime;
+        if (!isDeleting && charIdx === current.length) {
+            delay = 1800;
             isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
+        } else if (isDeleting && charIdx === 0) {
             isDeleting = false;
-            roleIndex = (roleIndex + 1) % operationalRoles.length;
+            roleIdx = (roleIdx + 1) % multiverseRoles.length;
             delay = 300;
         }
 
-        setTimeout(runRoleTyping, delay);
+        setTimeout(runMultiverseTyping, delay);
     }
-    runRoleTyping();
+    runMultiverseTyping();
 
-    // ==================== 7. LIGHT / DARK THEME SWITCHER ====================
+    // ==================== 7. LIGHT / DARK WORKSTATION THEME SWITCHER ====================
     const modeToggleBtn = document.getElementById('mode-toggle-btn');
     const modeIcon = modeToggleBtn ? modeToggleBtn.querySelector('i') : null;
 
-    const savedMode = localStorage.getItem('mverse_mode') || 'dark';
+    const savedMode = localStorage.getItem('multiverse_theme') || 'dark';
     if (savedMode === 'light') {
         document.body.classList.add('light-mode');
         if (modeIcon) {
@@ -284,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modeToggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
             const isLight = document.body.classList.contains('light-mode');
-            localStorage.setItem('mverse_mode', isLight ? 'light' : 'dark');
+            localStorage.setItem('multiverse_theme', isLight ? 'light' : 'dark');
 
             if (modeIcon) {
                 if (isLight) {
@@ -295,105 +418,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     modeIcon.classList.add('fa-moon');
                 }
             }
+            playSpatialBeep(850, 0.05, 'triangle');
         });
     }
 
-    // ==================== 8. SCROLLSPY & BACK TO TOP ====================
-    const backToTopBtn = document.getElementById('hud-back-top');
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links-menu a');
-
-    window.addEventListener('scroll', () => {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollY > 150) {
-            backToTopBtn?.classList.add('visible');
-        } else {
-            backToTopBtn?.classList.remove('visible');
-        }
-
-        let currentSection = '';
-        sections.forEach(sec => {
-            const secTop = sec.offsetTop - 190;
-            const secHeight = sec.offsetHeight;
-            if (scrollY >= secTop && scrollY < secTop + secHeight) {
-                currentSection = sec.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    }, { passive: true });
-
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-
-    // ==================== 9. MOBILE HAMBURGER MENU ====================
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const navLinksMenu = document.getElementById('nav-links-menu');
-
-    if (hamburgerBtn && navLinksMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            navLinksMenu.classList.toggle('active');
-            document.body.style.overflow = navLinksMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('active');
-                navLinksMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-
-    // ==================== 10. MISSION FILTER TABS ====================
-    const missionTabs = document.querySelectorAll('.mission-tab');
-    const missionCards = document.querySelectorAll('.mission-card');
-
-    missionTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            missionTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            const filterCat = tab.getAttribute('data-filter');
-
-            missionCards.forEach(card => {
-                const cardCat = card.getAttribute('data-mission-cat') || '';
-                if (filterCat === 'all' || cardCat.includes(filterCat)) {
-                    card.style.display = 'flex';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 50);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.94)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 250);
-                }
-            });
-        });
-    });
-
-    // ==================== 11. MISSION INTEL MODAL DATA ====================
-    const missionIntelData = {
+    // ==================== 8. PROJECT MULTIVERSE DATA & MODAL ====================
+    const projectUniverseStore = {
         'collabsphere': {
-            title: 'MISSION 01 // CollabSphere — Collaborative Workspace & Telemetry',
+            title: 'CollabSphere — Collaborative Workspace & Team Telemetry',
             image: './assets/project1.png',
-            tags: ['Python', 'SQL', 'Data Analytics', 'FastAPI / Node.js', 'Chart.js', 'Real-time WebSocket'],
+            tags: ['Python', 'SQL', 'Data Analytics', 'FastAPI / Node.js', 'Chart.js', 'WebSockets'],
             description: 'CollabSphere is an enterprise-grade collaborative workspace and operational telemetry platform. It unifies project task flows with automated productivity analytics, tracking developer velocity, task dependencies, and workload distribution in real time.',
             features: [
-                'Real-time multi-user task synchronization and collaborative boards',
+                'Real-time multi-user task synchronization and collaborative kanban boards',
                 'Sprint velocity telemetry with automated burn-down and burn-up trajectory charts',
                 'SQL-driven analytics query engine for historical team performance metrics',
                 'Interactive workload balance heatmaps to detect and prevent team bottlenecks',
@@ -403,9 +440,9 @@ document.addEventListener('DOMContentLoaded', () => {
             liveUrl: '#'
         },
         'ecova': {
-            title: 'MISSION 02 // Ecova — Smart Sustainability & Carbon Analytics',
+            title: 'Ecova — Smart Sustainability & Carbon Data Analytics',
             image: './assets/project2.png',
-            tags: ['Python', 'Data Science', 'Pandas & NumPy', 'Machine Learning', 'ESG Compliance', 'Time Series'],
+            tags: ['Python', 'Data Science', 'Pandas & NumPy', 'Machine Learning', 'Time Series', 'ESG Compliance'],
             description: 'Ecova is an environmental data intelligence platform engineered to quantify, forecast, and optimize facility carbon emissions and power consumption. It ingests multi-source sensor and utility datasets to deliver actionable decarbonization insights.',
             features: [
                 'Time-series predictive modeling forecasting facility energy demand and peak loads',
@@ -418,9 +455,9 @@ document.addEventListener('DOMContentLoaded', () => {
             liveUrl: '#'
         },
         'aiinterview': {
-            title: 'MISSION 03 // AI Interview Agent — Candidate Evaluation & Speech Analytics',
+            title: 'AI Interview Agent — Candidate Evaluation & Speech Analytics',
             image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop',
-            tags: ['Generative AI', 'LLMs', 'NLP', 'Speech Analytics', 'Python', 'Sentiment Analysis'],
+            tags: ['Generative AI', 'LLMs', 'NLP', 'Speech Analytics', 'Python', 'Sentiment Scoring'],
             description: 'An AI-powered candidate interview assessment system. The agent conducts dynamic, context-aware technical interviews, evaluates candidate response depth, analyzes speech cadence and sentiment, and compiles structured analytical scorecards.',
             features: [
                 'Dynamic question generation tailored to role requirements and candidate answers',
@@ -434,33 +471,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const modalOverlay = document.getElementById('hud-modal-overlay');
-    const modalCloseBtn = document.getElementById('modal-exit-btn');
-    const modalImg = document.getElementById('modal-intel-img');
-    const modalHeadline = document.getElementById('modal-mission-headline');
-    const modalTagCluster = document.getElementById('modal-tag-cluster');
-    const modalOverview = document.getElementById('modal-overview-text');
-    const modalFeaturesList = document.getElementById('modal-features-checklist');
+    const modalOverlay = document.getElementById('multiverse-modal-overlay');
+    const modalCloseBtn = document.getElementById('modal-close-trigger');
+    const modalImg = document.getElementById('modal-portal-img');
+    const modalTitle = document.getElementById('modal-project-title');
+    const modalTagGalaxy = document.getElementById('modal-tag-galaxy');
+    const modalNarrative = document.getElementById('modal-narrative-text');
+    const modalFeaturesList = document.getElementById('modal-features-list');
     const modalGithubBtn = document.getElementById('modal-github-btn');
     const modalLiveBtn = document.getElementById('modal-live-btn');
 
-    function openMissionModal(key) {
-        const intel = missionIntelData[key];
+    function openProjectModal(key) {
+        const intel = projectUniverseStore[key];
         if (!intel || !modalOverlay) return;
 
         if (modalImg) modalImg.src = intel.image;
-        if (modalHeadline) modalHeadline.textContent = intel.title;
-        if (modalOverview) modalOverview.textContent = intel.description;
+        if (modalTitle) modalTitle.textContent = intel.title;
+        if (modalNarrative) modalNarrative.textContent = intel.description;
         if (modalGithubBtn) modalGithubBtn.href = intel.githubUrl;
         if (modalLiveBtn) modalLiveBtn.href = intel.liveUrl;
 
-        if (modalTagCluster) {
-            modalTagCluster.innerHTML = '';
+        if (modalTagGalaxy) {
+            modalTagGalaxy.innerHTML = '';
             intel.tags.forEach(tag => {
                 const chip = document.createElement('span');
-                chip.className = 'stack-chip';
+                chip.className = 'universe-chip';
                 chip.textContent = tag;
-                modalTagCluster.appendChild(chip);
+                modalTagGalaxy.appendChild(chip);
             });
         }
 
@@ -475,37 +512,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+        playSpatialBeep(1150, 0.08, 'triangle');
     }
 
-    function closeMissionModal() {
+    function closeProjectModal() {
         if (!modalOverlay) return;
         modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('[data-open-mission]').forEach(btn => {
+    document.querySelectorAll('[data-open-universe]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const missionKey = btn.getAttribute('data-open-mission');
-            openMissionModal(missionKey);
+            const universeKey = btn.getAttribute('data-open-universe');
+            openProjectModal(universeKey);
         });
     });
 
-    modalCloseBtn?.addEventListener('click', closeMissionModal);
+    modalCloseBtn?.addEventListener('click', closeProjectModal);
     modalOverlay?.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) closeMissionModal();
+        if (e.target === modalOverlay) closeProjectModal();
     });
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modalOverlay?.classList.contains('active')) {
-            closeMissionModal();
+            closeProjectModal();
         }
     });
 
-    // ==================== 12. ANIMATED RECORD STATS & ARSENAL OBSERVERS ====================
-    const statCounters = document.querySelectorAll('.stat-counter-val');
-    let statsAnimated = false;
+    // ==================== 9. MULTIVERSE FILTER TABS ====================
+    const filterPills = document.querySelectorAll('.multiverse-filter-pill');
+    const projectCards = document.querySelectorAll('.project-universe-card');
 
-    function runStatsCounter() {
+    filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            filterPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            const filterVal = pill.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const cardCat = card.getAttribute('data-universe-cat') || '';
+                if (filterVal === 'all' || cardCat.includes(filterVal)) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.94)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 250);
+                }
+            });
+            playSpatialBeep(780, 0.04, 'sine');
+        });
+    });
+
+    // ==================== 10. ANIMATED STATS & SKILL BARS OBSERVERS ====================
+    const statCounters = document.querySelectorAll('.stat-counter-num');
+    let statsDone = false;
+
+    function runCounterAnimation() {
         statCounters.forEach(counter => {
             const target = parseInt(counter.getAttribute('data-target') || counter.textContent, 10);
             let current = 0;
@@ -525,54 +594,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const recordsGrid = document.querySelector('.records-stats-grid');
+    const recordsGrid = document.querySelector('.multiverse-records-grid');
     if (recordsGrid) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    statsAnimated = true;
-                    runStatsCounter();
+                if (entry.isIntersecting && !statsDone) {
+                    statsDone = true;
+                    runCounterAnimation();
                 }
             });
         }, { threshold: 0.25 });
         observer.observe(recordsGrid);
     }
 
-    // Skills progress bars observer
-    const techFills = document.querySelectorAll('.tech-bar-fill');
-    const techObserver = new IntersectionObserver((entries) => {
+    const nodeFills = document.querySelectorAll('.node-bar-fill');
+    const nodeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const bar = entry.target;
-                const pct = bar.getAttribute('data-tech-pct') || '85%';
+                const pct = bar.getAttribute('data-node-pct') || '85%';
                 bar.style.width = pct;
-                techObserver.unobserve(bar);
+                nodeObserver.unobserve(bar);
             }
         });
     }, { threshold: 0.2 });
-    techFills.forEach(fill => techObserver.observe(fill));
+    nodeFills.forEach(fill => nodeObserver.observe(fill));
 
-    // ==================== 13. OPEN CHANNEL TRANSMISSION FORM ====================
-    const transmissionForm = document.getElementById('open-channel-form');
-    const transmissionToast = document.getElementById('transmission-toast');
+    // ==================== 11. TRANSMISSION FORM SUBMISSION ====================
+    const transmissionForm = document.getElementById('convergence-transmission-form');
+    const toast = document.getElementById('transmission-feedback-toast');
 
     if (transmissionForm) {
         transmissionForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('sender-name')?.value.trim();
-            const email = document.getElementById('sender-email')?.value.trim();
-            const msg = document.getElementById('transmission-msg')?.value.trim();
+            const name = document.getElementById('sender-identity')?.value.trim();
+            const email = document.getElementById('sender-frequency')?.value.trim();
+            const msg = document.getElementById('transmission-payload')?.value.trim();
 
             if (!name || !email || !msg) {
                 alert('All transmission parameters are required.');
                 return;
             }
 
-            if (transmissionToast) {
-                transmissionToast.style.display = 'block';
+            if (toast) {
+                toast.style.display = 'block';
                 transmissionForm.reset();
+                playSpatialBeep(1200, 0.1, 'triangle');
                 setTimeout(() => {
-                    transmissionToast.style.display = 'none';
+                    toast.style.display = 'none';
                 }, 6000);
             }
         });
