@@ -49,22 +49,6 @@ const server = http.createServer((req, res) => {
     });
 });
 
-let port = parseInt(process.env.PORT, 10) || 3000;
-
-function startServer(p) {
-    server.listen(p, '0.0.0.0', () => {
-        console.log(`\n🚀 Portfolio server is live at http://localhost:${p}\n`);
-    });
-}
-
-server.on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-        console.log(`⚠️ Port ${port} is currently in use. Trying port ${port + 1}...`);
-        port += 1;
-        setTimeout(() => startServer(port), 300);
-    } else {
-        console.error('Server error:', err);
-    }
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`M-VERSE Command Center live at http://localhost:${PORT}`);
 });
-
-startServer(port);

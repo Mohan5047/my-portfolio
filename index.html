@@ -4,22 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Note: base href removed to fix in-page anchor link navigation -->
     <meta name="description"
-        content="Mohaneshwaran M - Data Analytics, Business Intelligence & AI Specialist Portfolio. Explore projects including CollabSphere, Ecova, and AI Interview Agent.">
+        content="M-VERSE // Mohaneshwaran M — Cinematic Futuristic Developer Command Center Portfolio. Full-Stack & Data Analytics Specialist.">
     <meta name="keywords"
-        content="Mohaneshwaran M, Data Analytics, Data Analyst, AI Interview Agent, CollabSphere, Ecova, Python, SQL, Machine Learning, Power BI, Business Intelligence">
+        content="Mohaneshwaran M, M-VERSE, Developer Portfolio, Data Analytics, CollabSphere, Ecova, AI Interview Agent, Python, SQL, Machine Learning, Power BI">
     <meta name="author" content="Mohaneshwaran M">
-    <meta name="theme-color" content="#070a12">
+    <meta name="theme-color" content="#0a0a0f">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Mohaneshwaran M | Data Analytics & AI Specialist">
+    <meta property="og:title" content="Mohaneshwaran M | M-VERSE // Developer Operations">
     <meta property="og:description"
-        content="Transforming complex datasets into actionable business intelligence, predictive models, and AI-driven solutions.">
+        content="Futuristic Developer Command Center & Operations Portfolio. Explore missions, technical arsenal, and real-time intelligence.">
     <meta property="og:image" content="./assets/project1.png">
 
-    <title>Mohaneshwaran M | Data Analytics & AI Specialist</title>
+    <title>Mohaneshwaran M | M-VERSE // Developer Operations</title>
 
     <!-- Font Awesome Icons 6.5.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -33,48 +32,98 @@
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
         rel="stylesheet">
 
-    <!-- Custom CSS Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Cinematic HUD Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
-    <!-- Ambient Animated Glowing Orbs & Floating Data Particles -->
-    <div class="ambient-glow ambient-glow-1"></div>
-    <div class="ambient-glow ambient-glow-2"></div>
-    <div class="ambient-glow ambient-glow-3"></div>
-    <div class="ambient-glow ambient-glow-4"></div>
-    <div class="floating-particle p1"></div>
-    <div class="floating-particle p2"></div>
-    <div class="floating-particle p3"></div>
-    <div class="floating-particle p4"></div>
-    <div class="floating-particle p5"></div>
-    <div class="floating-particle p6"></div>
+    <!-- ==================== 1. CINEMATIC INTRO BOOTLOADER ==================== -->
+    <div id="cinematic-intro">
+        <div class="intro-radar-ring"></div>
+        <div class="intro-hud-box">
+            <h1 class="intro-logo">M-VERSE <span class="accent">// DEV OPS</span></h1>
+            <div class="intro-status-stream" id="intro-status-text">&gt; INITIALIZING DEVELOPER SYSTEM...</div>
+            <div class="intro-progress-track">
+                <div class="intro-progress-bar" id="intro-progress-bar"></div>
+            </div>
+            <button class="intro-skip-btn" id="intro-skip-btn">[ SKIP INITIALIZATION ]</button>
+        </div>
+    </div>
 
-    <!-- ==================== HEADER & NAVBAR ==================== -->
+    <!-- ==================== 2. CUSTOM HUD CURSOR ==================== -->
+    <div class="hud-cursor-dot" id="hud-cursor-dot"></div>
+    <div class="hud-cursor-ring" id="hud-cursor-ring"></div>
+
+    <!-- ==================== 3. BACKGROUND CANVAS & HUD GRID ==================== -->
+    <canvas id="hud-canvas-bg"></canvas>
+    <div class="hud-grid-overlay"></div>
+    <div class="ambient-flare flare-1"></div>
+    <div class="ambient-flare flare-2"></div>
+
+    <!-- ==================== 4. REAL-TIME TELEMETRY TOP BAR ==================== -->
+    <div class="top-telemetry-bar">
+        <div class="container">
+            <div class="telemetry-row">
+                <div class="telemetry-status">
+                    <span class="signal-pulse-dot"></span>
+                    <span>M-VERSE // SYSTEM ONLINE</span>
+                </div>
+
+                <div class="telemetry-kpis">
+                    <div class="kpi-unit">
+                        <span>ACCURACY:</span>
+                        <span class="val">98.4%</span>
+                    </div>
+                    <div class="kpi-unit">
+                        <span>DATA INGESTION:</span>
+                        <span class="val">1.2M+ RECS</span>
+                    </div>
+                    <div class="kpi-unit">
+                        <span>LATENCY:</span>
+                        <span class="val">&lt;15MS</span>
+                    </div>
+                </div>
+
+                <div class="telemetry-clock" id="telemetry-clock">UTC 00:00:00</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 5. HUD NAVIGATION BAR ==================== -->
     <header id="header">
         <div class="container">
             <nav>
-                <a href="#" class="brand-logo" aria-label="Mohaneshwaran M Home">
-                    <span>Mohaneshwaran</span> <span class="gradient-text">M.</span>
+                <a href="#" class="hud-logo" aria-label="Mohaneshwaran M Home">
+                    <span>Mohaneshwaran</span> <span class="hud-logo-tag">DEV // OPS</span>
                 </a>
 
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Stack</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Journey</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="nav-links-menu" id="nav-links-menu">
+                    <li><a href="#hero">Command</a></li>
+                    <li><a href="#about">Identity</a></li>
+                    <li><a href="#projects">Missions</a></li>
+                    <li><a href="#skills">Arsenal</a></li>
+                    <li><a href="#experience">Operations</a></li>
+                    <li><a href="#records">Records</a></li>
+                    <li><a href="#intel">Intel</a></li>
+                    <li><a href="#contact">Channel</a></li>
                 </ul>
 
-                <div class="nav-controls">
-                    <!-- Light / Dark Mode Toggle -->
-                    <button class="mode-toggle-btn" id="mode-toggle-btn" aria-label="Toggle Light/Dark Theme"
-                        title="Toggle Light / Dark Mode">
+                <div class="nav-hud-controls">
+                    <!-- Audio Synthesizer Toggle (Muted by default) -->
+                    <button class="hud-ctrl-btn" id="sound-toggle-btn" aria-label="Toggle UI Audio"
+                        title="Audio Feedback: Muted">
+                        <i class="fa-solid fa-volume-xmark"></i>
+                    </button>
+
+                    <!-- Workstation Light / Dark Theme Switcher -->
+                    <button class="hud-ctrl-btn" id="mode-toggle-btn" aria-label="Toggle Workstation Mode"
+                        title="Toggle Workstation Theme">
                         <i class="fa-solid fa-moon"></i>
                     </button>
 
-                    <!-- Mobile Hamburger -->
-                    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <!-- Mobile Hamburger Menu Button -->
+                    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -85,195 +134,178 @@
     </header>
 
     <main>
-        <!-- ==================== HERO SECTION ==================== -->
-        <section class="hero hero-centered-layout" id="hero">
+        <!-- ==================== 6. HERO // COMMAND CENTER ==================== -->
+        <section class="hero" id="hero">
             <div class="container">
-                <div class="hero-center-content">
-                    <!-- Status Badge -->
-                    <div class="status-pill">
-                        <span class="signal-dot"></span>
-                        Available for Data Analytics & AI Roles
-                    </div>
-
-                    <!-- Centered Name Title -->
-                    <h1 class="hero-name-title">
-                        Mohaneshwaran <span class="gradient-text">M.</span>
-                    </h1>
-
-                    <!-- Dynamic Role Subtitle -->
-                    <div class="hero-role-badge">
-                        <i class="fa-solid fa-chart-pie" style="color: var(--sapphire-primary);"></i>
-                        <span id="typed-text" class="typed-text">Data Analytics Specialist</span>
-                    </div>
-
-                    <p class="hero-bio">
-                        Turning raw data into high-value business intelligence, predictive machine learning models,
-                        and automated analytical solutions using Python, SQL, statistical modeling, and modern data
-                        platforms.
-                    </p>
-
-                    <!-- Tech Chips -->
-                    <div class="hero-chips-wrap">
-                        <span class="hero-chip"><i class="fa-brands fa-python"></i> Python & Pandas</span>
-                        <span class="hero-chip"><i class="fa-solid fa-database"></i> SQL & Query Tuning</span>
-                        <span class="hero-chip"><i class="fa-solid fa-chart-simple"></i> Power BI / Tableau</span>
-                        <span class="hero-chip"><i class="fa-solid fa-brain"></i> Machine Learning</span>
-                        <span class="hero-chip"><i class="fa-solid fa-network-wired"></i> ETL Data Pipelines</span>
-                    </div>
-
-                    <!-- CTA Actions -->
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fa-solid fa-diagram-project"></i> View Projects
-                        </a>
-                        <a href="#contact" class="btn btn-glass">
-                            <i class="fa-solid fa-paper-plane"></i> Contact Me
-                        </a>
-                        <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-outline" aria-label="GitHub Profile">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Modern Interactive Showcase Cards (Replacing Old Terminal Code Block) -->
-                <div class="hero-showcase-deck">
-                    <div class="deck-card">
-                        <div class="deck-icon-box">
-                            <i class="fa-solid fa-chart-line"></i>
+                <div class="hero-layout-grid">
+                    <!-- Left Hero Command Card -->
+                    <div class="hud-card hero-command-card">
+                        <div class="hero-op-badge">
+                            <span class="signal-pulse-dot"></span>
+                            OPERATIONAL // DATA ANALYTICS & FULL-STACK
                         </div>
-                        <div class="deck-text">
-                            <h4>Predictive Analytics</h4>
-                            <p>ML models & forecasting pipelines</p>
+
+                        <h1 class="hero-title-name">
+                            MOHANESWARAN <span class="gradient-text">M.</span>
+                        </h1>
+
+                        <div class="hero-subtitle-role">
+                            <i class="fa-solid fa-terminal" style="color: var(--accent-cyan);"></i>
+                            <span id="typed-role-text" class="typed-role-text">Data Analytics Specialist</span>
+                        </div>
+
+                        <p class="hero-statement">
+                            Architecting data-driven business intelligence platforms, predictive machine learning models, and real-world digital solutions using Python, SQL, statistical modeling, and modern web architectures.
+                        </p>
+
+                        <!-- Tactical Tech Chips -->
+                        <div class="hero-tech-chips">
+                            <span class="hud-chip"><i class="fa-brands fa-python"></i> Python & Pandas</span>
+                            <span class="hud-chip"><i class="fa-solid fa-database"></i> SQL Query Engine</span>
+                            <span class="hud-chip"><i class="fa-solid fa-chart-pie"></i> Power BI / Tableau</span>
+                            <span class="hud-chip"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+                            <span class="hud-chip"><i class="fa-brands fa-react"></i> React & Modern Web</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="hero-cta-group">
+                            <a href="#projects" class="btn-hud btn-primary">
+                                <i class="fa-solid fa-crosshairs"></i> [ VIEW MISSIONS ]
+                            </a>
+                            <a href="#intel" class="btn-hud btn-secondary">
+                                <i class="fa-solid fa-file-shield"></i> [ CLASSIFIED INTEL ]
+                            </a>
+                            <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
+                                class="btn-hud btn-outline" aria-label="GitHub Repositories">
+                                <i class="fa-brands fa-github"></i> GITHUB
+                            </a>
+                            <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
+                                rel="noopener noreferrer" class="btn-hud btn-outline" aria-label="LinkedIn Profile">
+                                <i class="fa-brands fa-linkedin-in"></i> LINKEDIN
+                            </a>
                         </div>
                     </div>
 
-                    <div class="deck-card">
-                        <div class="deck-icon-box">
-                            <i class="fa-solid fa-gauge-high"></i>
-                        </div>
-                        <div class="deck-text">
-                            <h4>BI & Visual Dashboards</h4>
-                            <p>Power BI, Tableau & KPI Telemetry</p>
-                        </div>
-                    </div>
+                    <!-- Right Side Column: Pipeline Hologram & Direct Comms -->
+                    <div class="hero-side-column">
+                        <!-- Holographic Code Window -->
+                        <div class="hud-terminal-card">
+                            <div class="terminal-top-bar">
+                                <div class="terminal-dots">
+                                    <span class="t-dot t-red"></span>
+                                    <span class="t-dot t-yellow"></span>
+                                    <span class="t-dot t-green"></span>
+                                </div>
+                                <span class="terminal-filename">mverse_operations.py</span>
+                            </div>
+                            <pre class="terminal-code-body"><code><span class="code-kw">import</span> mverse_core <span class="code-kw">as</span> mv
+<span class="code-kw">from</span> data_analytics <span class="code-kw">import</span> PredictivePipeline
 
-                    <div class="deck-card">
-                        <div class="deck-icon-box">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-                        <div class="deck-text">
-                            <h4>SQL & Data Engineering</h4>
-                            <p>Scalable ETL & schema optimization</p>
-                        </div>
-                    </div>
+<span class="code-kw">class</span> <span class="code-fn">DeveloperOperations</span>:
+  <span class="code-prop">codename</span> = <span class="code-str">'MOHANESWARAN M'</span>
+  <span class="code-prop">status</span> = <span class="code-str">'OPERATIONAL // ACTIVE'</span>
+  <span class="code-prop">specialization</span> = [<span class="code-str">'Data Analytics'</span>, <span class="code-str">'Full Stack'</span>, <span class="code-str">'AI'</span>]
+  <span class="code-prop">flagship_missions</span> = [<span class="code-str">'CollabSphere'</span>, <span class="code-str">'Ecova'</span>, <span class="code-str">'AI Interview Agent'</span>]
 
-                    <div class="deck-card">
-                        <div class="deck-icon-box">
-                            <i class="fa-solid fa-brain"></i>
+  <span class="code-kw">def</span> <span class="code-fn">execute_solution</span>(self):
+    <span class="code-cmt"># Delivering precision business intelligence</span>
+    <span class="code-kw">return</span> <span class="code-str">"Real-World Impact Deployed."</span>
+
+print(DeveloperOperations().execute_solution())</code></pre>
                         </div>
-                        <div class="deck-text">
-                            <h4>AI & NLP Systems</h4>
-                            <p>Speech analytics & smart evaluation</p>
+
+                        <!-- Tactical Comms Card -->
+                        <div class="hud-card comms-node-card">
+                            <div>
+                                <h4>Comms Telemetry</h4>
+                                <p>Open for opportunities & collaboration</p>
+                            </div>
+                            <div class="comms-icons">
+                                <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
+                                    class="comms-link-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
+                                    rel="noopener noreferrer" class="comms-link-btn" title="LinkedIn"><i
+                                        class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="mailto:mohaneshv32007@gmail.com" class="comms-link-btn" title="Email"><i
+                                        class="fa-solid fa-envelope"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== BENTO ABOUT & DATA STATS ==================== -->
+        <!-- ==================== 7. ABOUT // IDENTITY ==================== -->
         <section class="section" id="about">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-badge"><i class="fa-solid fa-magnifying-glass-chart"></i> Expertise</span>
-                    <h2 class="section-title">About <span class="gradient-text">My Work</span></h2>
-                    <p class="section-desc">
-                        Bridging quantitative data analytics, business intelligence, and applied machine learning to
-                        deliver measurable business impact.
+                <div class="section-hud-header">
+                    <span class="hud-tag"><i class="fa-solid fa-fingerprint"></i> SEC-02 // IDENTITY</span>
+                    <h2 class="hud-title">Developer <span class="gradient-text">Identity</span></h2>
+                    <p class="hud-desc">
+                        Engineering analytical platforms, quantitative data models, and scalable software systems with mathematical precision and clean architecture.
                     </p>
                 </div>
 
-                <div class="bento-about-grid">
-                    <!-- Box 1: Narrative (Span 7) -->
-                    <div class="bento-box bento-story">
-                        <h3>Data Analytics & AI Specialist</h3>
+                <div class="identity-grid">
+                    <!-- Story Tile -->
+                    <div class="hud-card identity-story-tile">
+                        <h3>M-VERSE Core Engineer</h3>
                         <p>
-                            Hello! I am <strong>Mohaneshwaran M</strong>, a data analytics and AI professional based in
-                            Tamil Nadu, India. I specialize in data exploration, predictive modeling, and business
-                            intelligence architectures that empower organizations to make confident, data-driven
-                            decisions.
+                            I am <strong>Mohaneshwaran M</strong>, a data analytics specialist and software engineer based in Tamil Nadu, India. I focus on turning complex, multi-dimensional datasets into high-value business intelligence, automated workflows, and applied machine learning models.
                         </p>
                         <p>
-                            My work spans engineering scalable data pipelines, writing complex SQL queries, designing
-                            interactive KPI dashboards, and deploying applied AI algorithms such as speech evaluation
-                            engines and carbon analytics models.
+                            My engineering approach bridges robust backend data ingestion pipelines, optimized SQL queries, and interactive KPI visualizations. I have architected systems ranging from collaborative workspace telemetry (<strong>CollabSphere</strong>) and environmental sustainability intelligence (<strong>Ecova</strong>) to intelligent speech analytics (<strong>AI Interview Agent</strong>).
                         </p>
                         <p>
-                            With deep hands-on experience building solutions like <strong>CollabSphere</strong>,
-                            <strong>Ecova</strong>, and the <strong>AI Interview Agent</strong>, I focus on statistical
-                            rigor, data integrity, and high-clarity visualization.
+                            Whether building predictive models in Python or deploying interactive dashboards, my focus is always on data integrity, statistical rigor, and scalable code.
                         </p>
                     </div>
 
-                    <!-- Box 2: Stats (Span 5) -->
-                    <div class="bento-box bento-stats">
-                        <div class="stat-item">
-                            <div class="stat-num-row">
-                                <span class="stat-num" data-target="15">15</span>
-                                <span class="stat-sign">+</span>
-                            </div>
-                            <p class="stat-txt">Analytics & ML Models</p>
+                    <!-- Telemetry Specifications Tile -->
+                    <div class="hud-card identity-telemetry-tile">
+                        <div class="telemetry-spec-row">
+                            <span class="spec-label">PRIMARY ROLE</span>
+                            <span class="spec-val">Data Analytics Specialist & Software Engineer</span>
                         </div>
-
-                        <div class="stat-item">
-                            <div class="stat-num-row">
-                                <span class="stat-num" data-target="500">500</span>
-                                <span class="stat-sign">+</span>
-                            </div>
-                            <p class="stat-txt">GitHub Commits</p>
+                        <div class="telemetry-spec-row">
+                            <span class="spec-label">CORE FOCUS</span>
+                            <span class="spec-val">Predictive Analytics • Business Intelligence • AI Solutions</span>
                         </div>
-
-                        <div class="stat-item">
-                            <div class="stat-num-row">
-                                <span class="stat-num" data-target="100">100</span>
-                                <span class="stat-sign">%</span>
-                            </div>
-                            <p class="stat-txt">Data Precision</p>
+                        <div class="telemetry-spec-row">
+                            <span class="spec-label">CURRENT MODE</span>
+                            <span class="spec-val">Building, Analyzing & Deploying</span>
                         </div>
-
-                        <div class="stat-item">
-                            <div class="stat-num-row">
-                                <span class="stat-num" data-target="3">3</span>
-                                <span class="stat-sign">+</span>
-                            </div>
-                            <p class="stat-txt">Years Analytical Focus</p>
+                        <div class="telemetry-spec-row">
+                            <span class="spec-label">GEOGRAPHIC TELEMETRY</span>
+                            <span class="spec-val">Tamil Nadu, India • GMT +5:30</span>
+                        </div>
+                        <div class="telemetry-spec-row">
+                            <span class="spec-label">ARSENAL SUMMARY</span>
+                            <span class="spec-val">Python • SQL • Machine Learning • Power BI • React</span>
                         </div>
                     </div>
 
-                    <!-- 4 Core Pillars (Span 3 each) -->
-                    <div class="bento-box bento-feature-item">
-                        <div class="feature-icon-badge"><i class="fa-solid fa-chart-line"></i></div>
+                    <!-- 4 Tactical Pillar Tiles -->
+                    <div class="hud-card identity-pillar-tile">
+                        <div class="pillar-icon-box"><i class="fa-solid fa-chart-line"></i></div>
                         <h4>Predictive Analytics</h4>
-                        <p>Designing time-series forecasting models, classification algorithms, and regression
-                            pipelines.</p>
+                        <p>Designing time-series models, regression pipelines, and anomaly detection algorithms.</p>
                     </div>
 
-                    <div class="bento-box bento-feature-item">
-                        <div class="feature-icon-badge"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="hud-card identity-pillar-tile">
+                        <div class="pillar-icon-box"><i class="fa-solid fa-cubes"></i></div>
                         <h4>Business Intelligence</h4>
-                        <p>Transforming complex dimensional tables into intuitive, high-impact KPI telemetry dashboards.
-                        </p>
+                        <p>Transforming complex dimensional tables into real-time KPI telemetry dashboards.</p>
                     </div>
 
-                    <div class="bento-box bento-feature-item">
-                        <div class="feature-icon-badge"><i class="fa-solid fa-database"></i></div>
+                    <div class="hud-card identity-pillar-tile">
+                        <div class="pillar-icon-box"><i class="fa-solid fa-database"></i></div>
                         <h4>SQL & ETL Pipelines</h4>
-                        <p>Automating data extraction, transformations, schema design, and high-speed query
-                            optimization.</p>
+                        <p>Automating data extraction, transformations, schema design, and high-speed query execution.</p>
                     </div>
 
-                    <div class="bento-box bento-feature-item">
-                        <div class="feature-icon-badge"><i class="fa-solid fa-brain"></i></div>
+                    <div class="hud-card identity-pillar-tile">
+                        <div class="pillar-icon-box"><i class="fa-solid fa-brain"></i></div>
                         <h4>Applied AI & NLP</h4>
                         <p>Integrating speech analysis, sentiment evaluation, and LLM-driven intelligence rubrics.</p>
                     </div>
@@ -281,295 +313,134 @@
             </div>
         </section>
 
-        <!-- ==================== SKILLS MATRIX SECTION ==================== -->
-        <section class="section" id="skills">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge"><i class="fa-solid fa-layer-group"></i> Analytical Toolset</span>
-                    <h2 class="section-title">Technical <span class="gradient-text">Proficiencies</span></h2>
-                    <p class="section-desc">
-                        My quantitative toolkit across data manipulation, business intelligence, machine learning, and
-                        database systems.
-                    </p>
-                </div>
-
-                <div class="skills-grid">
-                    <!-- Matrix 1: Analytics & Modeling -->
-                    <div class="skill-matrix-card">
-                        <div class="matrix-header">
-                            <div class="matrix-icon"><i class="fa-solid fa-calculator"></i></div>
-                            <h3>Analytics & Modeling</h3>
-                        </div>
-                        <div class="skill-rows">
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-brands fa-python"></i> Python (Pandas,
-                                        NumPy)</span>
-                                    <span class="skill-pct">95%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="95%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-database"></i> SQL & Relational
-                                        Databases</span>
-                                    <span class="skill-pct">92%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="92%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-brain"></i> Machine Learning &
-                                        Scikit-Learn</span>
-                                    <span class="skill-pct">85%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-chart-area"></i> Statistical
-                                        Modeling & Testing</span>
-                                    <span class="skill-pct">88%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="88%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Matrix 2: BI & Visualization -->
-                    <div class="skill-matrix-card">
-                        <div class="matrix-header">
-                            <div class="matrix-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                            <h3>BI & Visualization</h3>
-                        </div>
-                        <div class="skill-rows">
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-chart-column"></i> Power BI &
-                                        Tableau</span>
-                                    <span class="skill-pct">90%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-gauge-high"></i> Interactive KPI
-                                        Dashboards</span>
-                                    <span class="skill-pct">94%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="94%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-eye"></i> Data Storytelling &
-                                        Reporting</span>
-                                    <span class="skill-pct">92%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="92%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-chart-line"></i> Chart.js &
-                                        D3.js Visuals</span>
-                                    <span class="skill-pct">85%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="85%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Matrix 3: Data Engineering & AI -->
-                    <div class="skill-matrix-card">
-                        <div class="matrix-header">
-                            <div class="matrix-icon"><i class="fa-solid fa-server"></i></div>
-                            <h3>Data Pipelines & AI</h3>
-                        </div>
-                        <div class="skill-rows">
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-network-wired"></i> ETL
-                                        Pipelines & Preprocessing</span>
-                                    <span class="skill-pct">90%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-robot"></i> Generative AI & NLP
-                                        Models</span>
-                                    <span class="skill-pct">86%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="86%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-brands fa-github"></i> Git & Data
-                                        Versioning</span>
-                                    <span class="skill-pct">90%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-row">
-                                <div class="skill-meta">
-                                    <span class="skill-title-grp"><i class="fa-solid fa-cloud"></i> REST APIs & Cloud
-                                        Ingestion</span>
-                                    <span class="skill-pct">85%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" data-pct="85%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== REAL PROJECTS SHOWCASE ==================== -->
+        <!-- ==================== 8. PROJECTS // MISSIONS ==================== -->
         <section class="section" id="projects">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-badge"><i class="fa-solid fa-folder-open"></i> Portfolio Showcase</span>
-                    <h2 class="section-title">Key <span class="gradient-text">Projects</span></h2>
-                    <p class="section-desc">
-                        Explore my flagship projects across collaborative analytics, environmental data intelligence,
-                        and AI-driven candidate evaluation.
+                <div class="section-hud-header">
+                    <span class="hud-tag"><i class="fa-solid fa-crosshairs"></i> SEC-03 // MISSIONS</span>
+                    <h2 class="hud-title">Operational <span class="gradient-text">Missions</span></h2>
+                    <p class="hud-desc">
+                        Explore my flagship deployed missions spanning team workspace telemetry, smart environmental analytics, and AI candidate evaluation.
                     </p>
                 </div>
 
-                <!-- Filter Tabs -->
-                <div class="filter-tab-bar">
-                    <button class="tab-pill active" data-filter="all">All Projects</button>
-                    <button class="tab-pill" data-filter="analytics">Analytics & BI</button>
-                    <button class="tab-pill" data-filter="ai">AI & ML</button>
-                    <button class="tab-pill" data-filter="data">Data Platforms</button>
+                <!-- Mission Filter Tabs -->
+                <div class="mission-filters-track">
+                    <button class="mission-tab active" data-filter="all">[ ALL MISSIONS ]</button>
+                    <button class="mission-tab" data-filter="analytics">[ ANALYTICS & BI ]</button>
+                    <button class="mission-tab" data-filter="ai">[ AI & ML ]</button>
+                    <button class="mission-tab" data-filter="data">[ DATA PLATFORMS ]</button>
                 </div>
 
-                <!-- Projects Grid -->
-                <div class="projects-showcase-grid">
-                    <!-- Project 1: CollabSphere -->
-                    <div class="showcase-card" data-cat="analytics data">
-                        <div class="showcase-media">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="CollabSphere Platform Preview">
-                            <div class="showcase-media-overlay">
-                                <button class="btn btn-primary btn-sm" data-open-modal="collabsphere">
-                                    <i class="fa-solid fa-eye"></i> View Project Analysis
+                <!-- Missions Showcase Grid -->
+                <div class="missions-showcase-grid">
+                    <!-- Mission 01: CollabSphere -->
+                    <div class="hud-card mission-card" data-mission-cat="analytics data">
+                        <div class="mission-media-wrapper">
+                            <img src="./assets/project1.png" alt="CollabSphere Platform Preview">
+                            <div class="mission-media-overlay">
+                                <button class="btn-hud btn-primary btn-sm" data-open-mission="collabsphere">
+                                    <i class="fa-solid fa-eye"></i> [ VIEW MISSION INTEL ]
                                 </button>
                             </div>
                         </div>
-                        <div class="showcase-content">
-                            <div class="tag-cluster">
-                                <span class="chip-tag">Data Analytics</span>
-                                <span class="chip-tag">Python & SQL</span>
-                                <span class="chip-tag">Team Telemetry</span>
-                                <span class="chip-tag">Chart.js</span>
+                        <div class="mission-body">
+                            <div class="mission-header-meta">
+                                <span class="mission-code-tag">MISSION // 01</span>
+                                <span class="mission-status-tag">STATUS: OPERATIONAL</span>
                             </div>
-                            <h3 class="showcase-title">CollabSphere — Workspace Analytics</h3>
-                            <p class="showcase-desc">
-                                Enterprise-grade collaborative platform integrating real-time team task synchronization
-                                with automated developer velocity tracking, burn-down analytics, and workload balance
-                                heatmaps.
+                            <h3 class="mission-title">CollabSphere</h3>
+                            <p class="mission-desc">
+                                Collaborative workspace platform integrating real-time team task synchronization with automated developer velocity tracking, burn-down analytics, and workload balance heatmaps.
                             </p>
-                            <div class="showcase-footer">
+                            <div class="mission-stack-cluster">
+                                <span class="stack-chip">Python</span>
+                                <span class="stack-chip">SQL</span>
+                                <span class="stack-chip">Data Analytics</span>
+                                <span class="stack-chip">Chart.js</span>
+                            </div>
+                            <div class="mission-footer-bar">
                                 <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                                    class="footer-link">
-                                    <i class="fa-brands fa-github"></i> Repository
+                                    class="mission-link">
+                                    <i class="fa-brands fa-github"></i> REPOSITORY
                                 </a>
-                                <a href="#" class="footer-link accent" data-open-modal="collabsphere">
-                                    <i class="fa-solid fa-circle-info"></i> Project Details
+                                <a href="#" class="mission-link primary" data-open-mission="collabsphere">
+                                    <i class="fa-solid fa-circle-info"></i> MISSION INTEL
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2: Ecova -->
-                    <div class="showcase-card" data-cat="analytics ai data">
-                        <div class="showcase-media">
-                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" alt="Ecova Sustainability Analytics Preview">
-                            <div class="showcase-media-overlay">
-                                <button class="btn btn-primary btn-sm" data-open-modal="ecova">
-                                    <i class="fa-solid fa-eye"></i> View Project Analysis
+                    <!-- Mission 02: Ecova -->
+                    <div class="hud-card mission-card" data-mission-cat="analytics ai data">
+                        <div class="mission-media-wrapper">
+                            <img src="./assets/project2.png" alt="Ecova Sustainability Analytics Preview">
+                            <div class="mission-media-overlay">
+                                <button class="btn-hud btn-primary btn-sm" data-open-mission="ecova">
+                                    <i class="fa-solid fa-eye"></i> [ VIEW MISSION INTEL ]
                                 </button>
                             </div>
                         </div>
-                        <div class="showcase-content">
-                            <div class="tag-cluster">
-                                <span class="chip-tag">Data Science</span>
-                                <span class="chip-tag">Machine Learning</span>
-                                <span class="chip-tag">Time Series</span>
-                                <span class="chip-tag">ESG Insights</span>
+                        <div class="mission-body">
+                            <div class="mission-header-meta">
+                                <span class="mission-code-tag">MISSION // 02</span>
+                                <span class="mission-status-tag">STATUS: DEPLOYED</span>
                             </div>
-                            <h3 class="showcase-title">Ecova — Smart Sustainability Platform</h3>
-                            <p class="showcase-desc">
-                                Intelligent environmental analytics platform measuring carbon footprints, predicting
-                                facility energy consumption spikes using time-series models, and generating automated
-                                ESG compliance reports.
+                            <h3 class="mission-title">Ecova</h3>
+                            <p class="mission-desc">
+                                Smart environmental sustainability and green data analytics platform measuring carbon footprints, predicting facility energy demand spikes using time-series models, and generating automated ESG compliance reports.
                             </p>
-                            <div class="showcase-footer">
+                            <div class="mission-stack-cluster">
+                                <span class="stack-chip">Data Science</span>
+                                <span class="stack-chip">Machine Learning</span>
+                                <span class="stack-chip">Time Series</span>
+                                <span class="stack-chip">ESG Insights</span>
+                            </div>
+                            <div class="mission-footer-bar">
                                 <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                                    class="footer-link">
-                                    <i class="fa-brands fa-github"></i> Repository
+                                    class="mission-link">
+                                    <i class="fa-brands fa-github"></i> REPOSITORY
                                 </a>
-                                <a href="#" class="footer-link accent" data-open-modal="ecova">
-                                    <i class="fa-solid fa-circle-info"></i> Project Details
+                                <a href="#" class="mission-link primary" data-open-mission="ecova">
+                                    <i class="fa-solid fa-circle-info"></i> MISSION INTEL
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3: AI Interview Agent -->
-                    <div class="showcase-card" data-cat="ai analytics">
-                        <div class="showcase-media">
+                    <!-- Mission 03: AI Interview Agent -->
+                    <div class="hud-card mission-card" data-mission-cat="ai analytics">
+                        <div class="mission-media-wrapper">
                             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
                                 alt="AI Interview Agent Preview">
-                            <div class="showcase-media-overlay">
-                                <button class="btn btn-primary btn-sm" data-open-modal="aiinterview">
-                                    <i class="fa-solid fa-eye"></i> View Project Analysis
+                            <div class="mission-media-overlay">
+                                <button class="btn-hud btn-primary btn-sm" data-open-mission="aiinterview">
+                                    <i class="fa-solid fa-eye"></i> [ VIEW MISSION INTEL ]
                                 </button>
                             </div>
                         </div>
-                        <div class="showcase-content">
-                            <div class="tag-cluster">
-                                <span class="chip-tag">Generative AI</span>
-                                <span class="chip-tag">NLP & LLMs</span>
-                                <span class="chip-tag">Speech Analytics</span>
-                                <span class="chip-tag">Sentiment Scoring</span>
+                        <div class="mission-body">
+                            <div class="mission-header-meta">
+                                <span class="mission-code-tag">MISSION // 03</span>
+                                <span class="mission-status-tag">STATUS: OPERATIONAL</span>
                             </div>
-                            <h3 class="showcase-title">AI Interview Agent — Evaluation Engine</h3>
-                            <p class="showcase-desc">
-                                AI-powered conversational interview system analyzing candidate audio responses,
-                                evaluating technical competency depth against rubrics, and generating multi-dimensional
-                                candidate assessment scorecards.
+                            <h3 class="mission-title">AI Interview Agent</h3>
+                            <p class="mission-desc">
+                                Generative AI candidate interview assessment system analyzing audio responses, evaluating technical competency depth against rubrics, and generating multi-dimensional candidate assessment scorecards.
                             </p>
-                            <div class="showcase-footer">
+                            <div class="mission-stack-cluster">
+                                <span class="stack-chip">Generative AI</span>
+                                <span class="stack-chip">NLP & LLMs</span>
+                                <span class="stack-chip">Speech Analytics</span>
+                                <span class="stack-chip">Sentiment Scoring</span>
+                            </div>
+                            <div class="mission-footer-bar">
                                 <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                                    class="footer-link">
-                                    <i class="fa-brands fa-github"></i> Repository
+                                    class="mission-link">
+                                    <i class="fa-brands fa-github"></i> REPOSITORY
                                 </a>
-                                <a href="#" class="footer-link accent" data-open-modal="aiinterview">
-                                    <i class="fa-solid fa-circle-info"></i> Project Details
+                                <a href="#" class="mission-link primary" data-open-mission="aiinterview">
+                                    <i class="fa-solid fa-circle-info"></i> MISSION INTEL
                                 </a>
                             </div>
                         </div>
@@ -578,57 +449,182 @@
             </div>
         </section>
 
-        <!-- ==================== JOURNEY & EDUCATION TIMELINE ==================== -->
-        <section class="section" id="experience">
+        <!-- ==================== 9. SKILLS // ARSENAL ==================== -->
+        <section class="section" id="skills">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-badge"><i class="fa-solid fa-graduation-cap"></i> Milestones</span>
-                    <h2 class="section-title">Education & <span class="gradient-text">Journey</span></h2>
-                    <p class="section-desc">
-                        Academic background, analytical research milestones, and engineering growth.
+                <div class="section-hud-header">
+                    <span class="hud-tag"><i class="fa-solid fa-shield-halved"></i> SEC-04 // ARSENAL</span>
+                    <h2 class="hud-title">Technical <span class="gradient-text">Arsenal</span></h2>
+                    <p class="hud-desc">
+                        Interactive telemetry breakdown of my engineering toolset across analytics, machine learning, business intelligence, and database infrastructure.
                     </p>
                 </div>
 
-                <div class="cyber-timeline">
-                    <!-- Milestone 1 -->
-                    <div class="timeline-row">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card-box">
-                            <span class="timeline-era">2023 - PRESENT</span>
+                <div class="arsenal-grid">
+                    <!-- Module 1: Analytics & Modeling -->
+                    <div class="hud-card arsenal-module-card">
+                        <div class="module-header">
+                            <div class="module-icon-box"><i class="fa-solid fa-calculator"></i></div>
+                            <h3>Analytics & Modeling</h3>
+                        </div>
+                        <div class="module-tech-list">
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-brands fa-python"></i> Python (Pandas, NumPy)</span>
+                                    <span class="tech-status-badge">95%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="95%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-database"></i> SQL & Relational Databases</span>
+                                    <span class="tech-status-badge">92%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="92%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-brain"></i> Machine Learning & Scikit-Learn</span>
+                                    <span class="tech-status-badge">85%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="85%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-chart-area"></i> Statistical Modeling & Testing</span>
+                                    <span class="tech-status-badge">88%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="88%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2: BI & Visualization -->
+                    <div class="hud-card arsenal-module-card">
+                        <div class="module-header">
+                            <div class="module-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+                            <h3>BI & Visualization</h3>
+                        </div>
+                        <div class="module-tech-list">
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-chart-column"></i> Power BI & Tableau</span>
+                                    <span class="tech-status-badge">90%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="90%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-gauge-high"></i> Interactive KPI Dashboards</span>
+                                    <span class="tech-status-badge">94%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="94%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-eye"></i> Data Storytelling & Reporting</span>
+                                    <span class="tech-status-badge">92%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="92%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-chart-line"></i> Chart.js & D3.js Visuals</span>
+                                    <span class="tech-status-badge">85%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="85%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3: Data Engineering & AI -->
+                    <div class="hud-card arsenal-module-card">
+                        <div class="module-header">
+                            <div class="module-icon-box"><i class="fa-solid fa-server"></i></div>
+                            <h3>Data Pipelines & AI</h3>
+                        </div>
+                        <div class="module-tech-list">
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-network-wired"></i> ETL Pipelines & Preprocessing</span>
+                                    <span class="tech-status-badge">90%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="90%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-robot"></i> Generative AI & NLP Models</span>
+                                    <span class="tech-status-badge">86%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="86%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-brands fa-github"></i> Git & Data Versioning</span>
+                                    <span class="tech-status-badge">90%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="90%"></div></div>
+                            </div>
+                            <div class="tech-item-row">
+                                <div class="tech-item-meta">
+                                    <span class="tech-name"><i class="fa-solid fa-cloud"></i> REST APIs & Cloud Ingestion</span>
+                                    <span class="tech-status-badge">85%</span>
+                                </div>
+                                <div class="tech-bar-track"><div class="tech-bar-fill" data-tech-pct="85%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 10. EXPERIENCE // OPERATIONS ==================== -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section-hud-header">
+                    <span class="hud-tag"><i class="fa-solid fa-timeline"></i> SEC-05 // OPERATIONS</span>
+                    <h2 class="hud-title">Operational <span class="gradient-text">History</span></h2>
+                    <p class="hud-desc">
+                        Chronological progression of technical deployments, research initiatives, and academic foundations.
+                    </p>
+                </div>
+
+                <div class="operations-timeline">
+                    <!-- Operation 1 -->
+                    <div class="op-timeline-row">
+                        <div class="op-timeline-node"></div>
+                        <div class="hud-card op-detail-box">
+                            <span class="op-year-badge">2023 - PRESENT // ACTIVE OPERATION</span>
                             <h3>Applied Data Analytics & AI Engineering</h3>
-                            <h4>Independent Projects & Research</h4>
+                            <h4>Independent Deployments & Research</h4>
                             <p>
-                                Engineering data analytics solutions including CollabSphere, Ecova, and AI Interview
-                                Agent. Mastering Python data pipelines, SQL optimization, statistical analysis, and
-                                applied AI modeling.
+                                Engineering analytics platforms including CollabSphere, Ecova, and AI Interview Agent. Mastering Python data pipelines, SQL optimization, statistical analysis, and applied AI modeling.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Milestone 2 -->
-                    <div class="timeline-row">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card-box">
-                            <span class="timeline-era">2021 - 2025</span>
+                    <!-- Operation 2 -->
+                    <div class="op-timeline-row">
+                        <div class="op-timeline-node"></div>
+                        <div class="hud-card op-detail-box">
+                            <span class="op-year-badge">2021 - 2025 // ACADEMIC FOUNDATIONS</span>
                             <h3>Bachelor Degree in Computer Science / Technology</h3>
                             <h4>University Education</h4>
                             <p>
-                                Strong foundation in Database Management Systems (DBMS), Data Structures & Algorithms,
-                                Probability & Statistics, Computer Networks, and Software Engineering Principles.
+                                Rigorous foundation in Database Management Systems (DBMS), Data Structures & Algorithms, Probability & Statistics, Computer Networks, and Software Engineering Methodologies.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Milestone 3 -->
-                    <div class="timeline-row">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-card-box">
-                            <span class="timeline-era">2024</span>
+                    <!-- Operation 3 -->
+                    <div class="op-timeline-row">
+                        <div class="op-timeline-node"></div>
+                        <div class="hud-card op-detail-box">
+                            <span class="op-year-badge">2024 // CERTIFIED RECORD</span>
                             <h3>Data Analytics & Version Control Training</h3>
-                            <h4>Technical Certifications & Platforms</h4>
+                            <h4>Technical Training & Certifications</h4>
                             <p>
-                                Practical training covering automated ETL pipelines, Git collaboration workflows,
-                                relational SQL querying, and data visualization architectures.
+                                Hands-on practical training covering automated ETL pipelines, Git collaboration workflows, relational SQL querying, and data visualization architectures.
                             </p>
                         </div>
                     </div>
@@ -636,94 +632,188 @@
             </div>
         </section>
 
-        <!-- ==================== CONTACT SECTION ==================== -->
-        <section class="section" id="contact">
+        <!-- ==================== 11. ACHIEVEMENTS // RECORDS ==================== -->
+        <section class="section" id="records">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-badge"><i class="fa-solid fa-envelope"></i> Touchpoints</span>
-                    <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
-                    <p class="section-desc">
-                        Looking for a Data Analytics specialist, have an analytical project, or want to collaborate?
-                        Let's connect!
+                <div class="section-hud-header">
+                    <span class="hud-tag"><i class="fa-solid fa-trophy"></i> SEC-06 // RECORDS</span>
+                    <h2 class="hud-title">Verified <span class="gradient-text">Records</span></h2>
+                    <p class="hud-desc">
+                        Quantified engineering impact and operational delivery metrics.
                     </p>
                 </div>
 
-                <div class="contact-layout-grid">
-                    <!-- Contact Cards -->
-                    <div class="contact-cards-stack">
-                        <a href="mailto:mohaneshv32007@gmail.com" class="c-card">
-                            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="c-details">
-                                <span>Direct Email</span>
+                <div class="records-stats-grid">
+                    <div class="hud-card record-stat-card">
+                        <div class="record-number-row">
+                            <span class="stat-counter-val" data-target="15">15</span>
+                            <span class="stat-sign">+</span>
+                        </div>
+                        <p>Missions Completed</p>
+                    </div>
+
+                    <div class="hud-card record-stat-card">
+                        <div class="record-number-row">
+                            <span class="stat-counter-val" data-target="500">500</span>
+                            <span class="stat-sign">+</span>
+                        </div>
+                        <p>GitHub Commits & Contribs</p>
+                    </div>
+
+                    <div class="hud-card record-stat-card">
+                        <div class="record-number-row">
+                            <span class="stat-counter-val" data-target="100">100</span>
+                            <span class="stat-sign">%</span>
+                        </div>
+                        <p>Data Precision & Quality</p>
+                    </div>
+
+                    <div class="hud-card record-stat-card">
+                        <div class="record-number-row">
+                            <span class="stat-counter-val" data-target="3">3</span>
+                            <span class="stat-sign">+</span>
+                        </div>
+                        <p>Years Operational Dev</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 12. RESUME // INTEL ==================== -->
+        <section class="section" id="intel">
+            <div class="container">
+                <div class="section-hud-header">
+                    <span class="hud-tag"><i class="fa-solid fa-file-shield"></i> SEC-07 // INTEL</span>
+                    <h2 class="hud-title">Classified <span class="gradient-text">Developer Intelligence</span></h2>
+                    <p class="hud-desc">
+                        Comprehensive summary of professional capabilities, engineering qualifications, and resume dossier.
+                    </p>
+                </div>
+
+                <div class="intel-card-wrapper">
+                    <div class="intel-text">
+                        <h3>Dossier Summary // Mohaneshwaran M</h3>
+                        <p>
+                            Quantitative analytics developer and software engineer skilled in predictive modeling, SQL database optimization, data storytelling, and real-time AI solutions. Dedicated to building reliable, high-performance systems for real-world impact.
+                        </p>
+                        <div class="intel-spec-table">
+                            <div class="intel-spec-unit">
+                                <span>EDUCATION</span>
+                                <strong>B.Tech / B.E. (Computer Science)</strong>
+                            </div>
+                            <div class="intel-spec-unit">
+                                <span>SPECIALIZATION</span>
+                                <strong>Data Analytics & AI Engineering</strong>
+                            </div>
+                            <div class="intel-spec-unit">
+                                <span>AVAILABILITY</span>
+                                <strong>Placements, Internships & Roles</strong>
+                            </div>
+                            <div class="intel-spec-unit">
+                                <span>SECURITY STATUS</span>
+                                <strong>Verified Operational</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: center;">
+                        <a href="mailto:mohaneshv32007@gmail.com?subject=Resume%20Request%20-%20Mohaneshwaran%20M"
+                            class="btn-hud btn-primary" style="width: 100%; text-align: center;">
+                            <i class="fa-solid fa-download"></i> [ REQUEST / DOWNLOAD RESUME ]
+                        </a>
+                        <a href="#contact" class="btn-hud btn-secondary" style="width: 100%; text-align: center;">
+                            <i class="fa-solid fa-paper-plane"></i> [ OPEN TRANSMISSION CHANNEL ]
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 13. CONTACT // OPEN CHANNEL ==================== -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-hud-header">
+                    <span class="hud-tag"><i class="fa-solid fa-satellite-dish"></i> SEC-08 // OPEN CHANNEL</span>
+                    <h2 class="hud-title">Transmit <span class="gradient-text">Message</span></h2>
+                    <p class="hud-desc">
+                        Ready to build meaningful data platforms or discuss career opportunities? Transmit a message directly into the command center.
+                    </p>
+                </div>
+
+                <div class="open-channel-grid">
+                    <!-- Direct Comms Nodes -->
+                    <div class="channel-nodes-stack">
+                        <a href="mailto:mohaneshv32007@gmail.com" class="hud-card channel-node-card">
+                            <div class="channel-node-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="channel-node-details">
+                                <span>DIRECT FREQUENCY</span>
                                 <h4>mohaneshv32007@gmail.com</h4>
                             </div>
                         </a>
 
-                        <a href="tel:+918807050831" class="c-card">
-                            <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="c-details">
-                                <span>Phone / Mobile</span>
+                        <a href="tel:+918807050831" class="hud-card channel-node-card">
+                            <div class="channel-node-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="channel-node-details">
+                                <span>DIRECT LINE</span>
                                 <h4>+91 8807050831</h4>
                             </div>
                         </a>
 
                         <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
-                            rel="noopener noreferrer" class="c-card">
-                            <div class="c-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-                            <div class="c-details">
-                                <span>LinkedIn Profile</span>
+                            rel="noopener noreferrer" class="hud-card channel-node-card">
+                            <div class="channel-node-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="channel-node-details">
+                                <span>LINKEDIN COMMS</span>
                                 <h4>Mohaneshwaran M</h4>
                             </div>
                         </a>
 
                         <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                            class="c-card">
-                            <div class="c-icon"><i class="fa-brands fa-github"></i></div>
-                            <div class="c-details">
-                                <span>GitHub Repositories</span>
+                            class="hud-card channel-node-card">
+                            <div class="channel-node-icon"><i class="fa-brands fa-github"></i></div>
+                            <div class="channel-node-details">
+                                <span>GITHUB REPOSITORIES</span>
                                 <h4>Mohan5047</h4>
                             </div>
                         </a>
 
-                        <div class="c-card" style="cursor: default;">
-                            <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="c-details">
-                                <span>Location</span>
+                        <div class="hud-card channel-node-card" style="cursor: default;">
+                            <div class="channel-node-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="channel-node-details">
+                                <span>BASE LOCATION</span>
                                 <h4>Tamil Nadu, India</h4>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Contact Form -->
-                    <div class="contact-form-card">
-                        <form id="cyber-contact-form">
-                            <div class="input-grp">
-                                <label for="c-name">Full Name *</label>
-                                <input type="text" id="c-name" class="cyber-input" placeholder="e.g. Alex Johnson"
-                                    required>
+                    <!-- Transmission Form -->
+                    <div class="hud-card transmission-form-card">
+                        <form id="open-channel-form">
+                            <div class="form-input-grp">
+                                <label for="sender-name">SENDER IDENTIFICATION *</label>
+                                <input type="text" id="sender-name" class="hud-input-ctrl"
+                                    placeholder="e.g. Alex Johnson // Recruiter" required>
                             </div>
-                            <div class="input-grp">
-                                <label for="c-email">Email Address *</label>
-                                <input type="email" id="c-email" class="cyber-input" placeholder="e.g. alex@example.com"
-                                    required>
+                            <div class="form-input-grp">
+                                <label for="sender-email">RETURN FREQUENCY (EMAIL) *</label>
+                                <input type="email" id="sender-email" class="hud-input-ctrl"
+                                    placeholder="e.g. alex@organization.com" required>
                             </div>
-                            <div class="input-grp">
-                                <label for="c-subject">Subject</label>
-                                <input type="text" id="c-subject" class="cyber-input"
-                                    placeholder="Data Analytics Role / Project Opportunity">
+                            <div class="form-input-grp">
+                                <label for="transmission-subject">TRANSMISSION SUBJECT</label>
+                                <input type="text" id="transmission-subject" class="hud-input-ctrl"
+                                    placeholder="Data Analytics Role / Project Collaboration">
                             </div>
-                            <div class="input-grp">
-                                <label for="c-msg">Your Message *</label>
-                                <textarea id="c-msg" class="cyber-input"
-                                    placeholder="Hello Mohaneshwaran, I'd like to discuss a data analytics project..."
-                                    required></textarea>
+                            <div class="form-input-grp">
+                                <label for="transmission-msg">TRANSMISSION PAYLOAD *</label>
+                                <textarea id="transmission-msg" class="hud-input-ctrl"
+                                    placeholder="Enter your message transmission here..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                <i class="fa-solid fa-paper-plane"></i> Send Message
+                            <button type="submit" class="btn-hud btn-primary" style="width: 100%;">
+                                <i class="fa-solid fa-paper-plane"></i> [ TRANSMIT PAYLOAD ]
                             </button>
-                            <div class="contact-toast" id="contact-toast">
-                                <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent
-                                successfully. I will get back to you promptly!
+                            <div class="transmission-toast" id="transmission-toast">
+                                <i class="fa-solid fa-circle-check"></i> TRANSMISSION CONFIRMED: Message received by M-VERSE command center. I will respond promptly!
                             </div>
                         </form>
                     </div>
@@ -732,69 +822,72 @@
         </section>
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- ==================== 14. FOOTER ==================== -->
     <footer>
         <div class="container">
             <div class="footer-inner">
-                <a href="#" class="brand-logo">
-                    <span>Mohaneshwaran</span> <span class="gradient-text">M.</span>
+                <a href="#" class="hud-logo">
+                    <span>M-VERSE</span> <span class="hud-logo-tag">MOHANESWARAN M.</span>
                 </a>
 
-                <ul class="footer-nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Stack</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Journey</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="footer-nav-track">
+                    <li><a href="#hero">Command</a></li>
+                    <li><a href="#about">Identity</a></li>
+                    <li><a href="#projects">Missions</a></li>
+                    <li><a href="#skills">Arsenal</a></li>
+                    <li><a href="#experience">Operations</a></li>
+                    <li><a href="#records">Records</a></li>
+                    <li><a href="#intel">Intel</a></li>
+                    <li><a href="#contact">Channel</a></li>
                 </ul>
 
-                <div class="footer-social-row">
+                <div class="footer-social-track">
                     <a href="https://github.com/Mohan5047/" target="_blank" rel="noopener noreferrer"
-                        class="footer-btn-circle" title="GitHub" aria-label="GitHub"><i
+                        class="footer-icon-circle" title="GitHub" aria-label="GitHub"><i
                             class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/mohaneshwaran-m-936184327" target="_blank"
-                        rel="noopener noreferrer" class="footer-btn-circle" title="LinkedIn" aria-label="LinkedIn"><i
+                        rel="noopener noreferrer" class="footer-icon-circle" title="LinkedIn" aria-label="LinkedIn"><i
                             class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="mailto:mohaneshv32007@gmail.com" class="footer-btn-circle" title="Email"
+                    <a href="mailto:mohaneshv32007@gmail.com" class="footer-icon-circle" title="Email"
                         aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="tel:+918807050831" class="footer-btn-circle" title="Phone" aria-label="Phone"><i
+                    <a href="tel:+918807050831" class="footer-icon-circle" title="Phone" aria-label="Phone"><i
                             class="fa-solid fa-phone"></i></a>
                 </div>
 
-                <p class="footer-note">
-                    &copy; 2026 Mohaneshwaran M. Engineered with Data Analytics & AI Architecture. All Rights Reserved.
+                <p class="footer-intel-note">
+                    &copy; 2026 Mohaneshwaran M. Built with M-VERSE Developer Operations Engine (HTML5, CSS3, JS). System Status: Operational.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== PROJECT DETAILS MODAL ==================== -->
-    <div class="modal-overlay" id="project-modal-overlay" role="dialog" aria-modal="true"
-        aria-labelledby="modal-heading">
-        <div class="modal-container">
-            <button class="btn-close-modal" id="modal-close-btn" aria-label="Close Modal">
+    <!-- ==================== 15. MISSION INTEL MODAL ==================== -->
+    <div class="hud-modal-overlay" id="hud-modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="modal-mission-headline">
+        <div class="hud-modal-window">
+            <button class="modal-exit-btn" id="modal-exit-btn" aria-label="Close Mission Intel">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="modal-hero-img">
-                <img id="modal-hero-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Project Preview">
+            <div class="modal-intel-preview">
+                <img id="modal-intel-img" src="./assets/project1.png" alt="Mission Intel Preview">
             </div>
 
-            <div class="modal-main-content">
-                <h3 class="modal-heading" id="modal-heading">Project Title</h3>
-                <div class="modal-tag-row" id="modal-tag-row"></div>
-                <p class="modal-paragraph" id="modal-paragraph">Project analytical breakdown...</p>
+            <div class="modal-content-area">
+                <h3 class="modal-mission-headline" id="modal-mission-headline">Mission Title</h3>
+                <div class="modal-tag-cluster" id="modal-tag-cluster"></div>
+                <p class="modal-overview-text" id="modal-overview-text">Mission analytical overview...</p>
 
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem; color: var(--text-title);">Key Architecture &
-                    Analytical Features:</h4>
-                <ul class="modal-feature-items" id="modal-feature-items"></ul>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem; color: var(--text-primary);">Key Architecture &
+                    Operational Features:</h4>
+                <ul class="modal-features-checklist" id="modal-features-checklist"></ul>
 
-                <div class="modal-btn-row">
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modal-github-btn">
-                        <i class="fa-brands fa-github"></i> GitHub Repository
+                <div class="modal-action-row">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-hud btn-primary" id="modal-github-btn">
+                        <i class="fa-brands fa-github"></i> GITHUB REPOSITORY
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="modal-live-btn">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Project Live Demo
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-hud btn-outline" id="modal-live-btn">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE MISSION PREVIEW
                     </a>
                 </div>
             </div>
@@ -802,7 +895,7 @@
     </div>
 
     <!-- Floating Back to Top Button -->
-    <button class="float-top-btn" id="float-top-btn" aria-label="Scroll to top" title="Back to top">
+    <button class="hud-back-top" id="hud-back-top" aria-label="Scroll to top" title="Scroll to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 

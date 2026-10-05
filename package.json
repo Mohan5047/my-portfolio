@@ -1,7 +1,7 @@
 {
-  "name": "mohan-portfolio",
-  "version": "1.0.0",
-  "description": "Mohaneshwaran M - Web Developer Portfolio",
+  "name": "mverse-portfolio",
+  "version": "2.0.0",
+  "description": "Mohaneshwaran M - M-VERSE // Developer Operations Portfolio",
   "main": "index.html",
   "scripts": {
     "dev": "node server.js",
@@ -9,7 +9,11 @@
   },
   "keywords": [
     "portfolio",
+    "m-verse",
     "developer",
+    "data-analytics",
+    "full-stack",
+    "ai",
     "html",
     "css",
     "javascript"
